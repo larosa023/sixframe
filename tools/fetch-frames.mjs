@@ -36,14 +36,16 @@ async function getJSON(url, headers = {}) {
   throw new Error(`rate limited: ${url}`);
 }
 
-// Pick 6 images, hardest first: least-popular stills early, the most iconic one last.
-function pickSix(urls) {
+// Pick n images spread evenly across a list that is already ordered hardest → easiest,
+// so the first pick is the most obscure image and the last is the most iconic.
+function pick(urls, n) {
   const uniq = [...new Set(urls)].filter(Boolean);
-  if (uniq.length <= 6) return uniq;
+  if (uniq.length <= n) return uniq;
   const picks = [];
-  for (let i = 0; i < 6; i++) picks.push(uniq[Math.round((i * (uniq.length - 1)) / 5)]);
+  for (let i = 0; i < n; i++) picks.push(uniq[Math.round((i * (uniq.length - 1)) / (n - 1))]);
   return [...new Set(picks)];
 }
+const pickSix = (urls) => pick(urls, 6);
 
 /* ---------------- TMDB (movies + shows) ---------------- */
 function tmdb(path, params = {}) {
@@ -113,8 +115,10 @@ async function showFrames(p) {
     } catch { /* some seasons have no details */ }
   }
   const backdrops = cleanBackdrops(await tmdb(`/tv/${id}/images`));
-  const early = pickSix(stills).slice(0, 4);
-  const late = backdrops.slice(-Math.max(2, 6 - early.length));
+  // Frames 1-3: episode stills (random moments, hardest).
+  // Frames 4-6: key art, least-used first, ending on the most iconic backdrop.
+  const early = pick(stills, 3);
+  const late = pick(backdrops, 6 - early.length);
   let frames = [...new Set([...early, ...late])];
   if (frames.length < 6) frames = pickSix([...stills, ...backdrops]);
   const cast = [...(show.aggregate_credits?.cast || [])].sort((a, b) => (b.total_episode_count || 0) - (a.total_episode_count || 0));
