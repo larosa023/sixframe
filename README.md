@@ -27,17 +27,21 @@ Run locally: `python -m http.server` in this folder, then open http://localhost:
 - Day boundaries are computed in `America/New_York`, DST included, in every visitor's browser. The page counts down to midnight ET and swaps to the new puzzles live, no refresh needed.
 - Puzzles rotate in list order. To lock a puzzle to a specific day, add `"date": "2026-12-25"` to it.
 - 101 puzzles per category, starting 2026-07-24 (#1) through 2026-11-01 (#101), so the whole archive is playable from launch. After that the list loops, and each puzzle comes back only after it has dropped out of the archive.
-- Titles live in `tools/lists/` (movies from IMDb's "1000 Greatest Films", shows from listchallenges' "Top 1000 TV Series", games from playthatgame.co.uk filtered to Steam). Edit a list, then run `python3 tools/build-puzzles.py` to regenerate `data/puzzles.json`.
+- Titles live in `tools/lists/` (movies from IMDb's "1000 Greatest Films", shows from listchallenges' "Top 1000 TV Series", games from playthatgame.co.uk filtered to Steam games with 6+ clean gameplay screenshots). Edit a list, then run `python3 tools/build-puzzles.py` to regenerate `data/puzzles.json`.
 - Gameplay (modelled on guessthe.game / guessthemovie.name): 6 guesses, Skip reveals the next frame, and each miss unlocks one hint (movies: genre → year → director → co-stars → lead actor; shows: genre → first aired → network → creator → stars; games: genre → year → Metacritic → publisher → developer). A guess from the same franchise scores 🟨.
-- Difficulty: frame 1 is the most obscure shot and frame 6 the most iconic (TMDB images ordered by how often they're voted/used, Steam screenshots in reverse store order, show episode stills before key art).
+- Difficulty: every frame was hand-picked and ordered from hardest (frame 1) to easiest (frame 6).
 
-## Automatic frames (Netlify)
+## Frames: real shots only
 
-On every Netlify build, `tools/fetch-frames.mjs` looks up each puzzle and links 6 images: TMDB stills for movies and shows, Steam store screenshots for games (no key needed). Set this in **Netlify → Project configuration → Environment variables**, then redeploy:
+Every frame is a real image from the movie, episode or game. No posters, key art, promo shots or logos. They were hand-picked and are stored in `data/stills.json`:
 
-- `TMDB` – your TMDB API key or Read Access Token (themoviedb.org → Settings → API)
+- **movies**: TMDB image paths of real film frames, keyed by IMDb id
+- **shows**: TMDB episode stills (screenshots from actual episodes), keyed by puzzle id
+- **games**: Steam store gameplay screenshots, stored as short keys and matched to the live Steam image at build time
 
-The deploy log lists every match. If a title resolves to the wrong thing, pin it with `"tmdb": <id>` or `"steam": <app id>` on that puzzle.
+On each Netlify build, `tools/fetch-frames.mjs` turns these into `data/frames.json` and looks up the hints. Set `TMDB` (your TMDB API key or read token) in **Netlify → Project configuration → Environment variables** for movie/show hints. Frames work without it.
+
+If a game's store page drops a picked screenshot, the deploy log lists it under "issues" so it can be re-picked.
 
 ## Adding frames manually
 

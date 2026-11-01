@@ -1,53 +1,47 @@
-// Build step: resolve 6 frames for every puzzle and write data/frames.json.
-// Movies & shows come from TMDB, games from the Steam store. Images are linked, not copied.
+// Build step: turn the hand-picked frames in data/stills.json into data/frames.json,
+// and look up the per-puzzle hints. No art, posters or key art are ever used:
+//   movies – hand-picked real film frames (TMDB image paths)
+//   shows  – hand-picked real episode stills (TMDB image paths)
+//   games  – hand-picked real gameplay screenshots (Steam store), matched by a short key
 //
-// Needs env vars (set them in Netlify → Project configuration → Environment variables):
-//   TMDB_TOKEN  – TMDB "API Read Access Token" (or TMDB_KEY – the shorter v3 API key)
-// Games need no key. A missing TMDB key never fails the build; those puzzles keep placeholders.
-//
-// Per-puzzle overrides in data/puzzles.json:
-//   "tmdb": 603        exact TMDB id if the title search picks the wrong thing
-//   "steam": 1245620   exact Steam app id
-//   "frames": [...]    hand-picked image paths/URLs (skips lookup entirely)
+// Env var (Netlify → Project configuration → Environment variables):
+//   TMDB  – TMDB API key or read token. Only needed for movie/show *hints*;
+//           frames work without it.
 
 import { readFile, writeFile } from "node:fs/promises";
 
 const root = new URL("..", import.meta.url);
 const data = JSON.parse(await readFile(new URL("data/puzzles.json", root), "utf8"));
-// Accept TMDB, TMDB_KEY or TMDB_TOKEN; either the short API key or the long read token works.
-const tmdbSecret = (process.env.TMDB_TOKEN || process.env.TMDB_KEY || process.env.TMDB || "").trim();
-const TMDB_TOKEN = tmdbSecret.startsWith("eyJ") ? tmdbSecret : "";
-const TMDB_KEY = TMDB_TOKEN ? "" : tmdbSecret;
+const stills = JSON.parse(await readFile(new URL("data/stills.json", root), "utf8"));
 const IMG = "https://image.tmdb.org/t/p/w1280";
 const out = { movies: {}, shows: {}, games: {} };
 const problems = [];
 
+// Accept TMDB, TMDB_KEY or TMDB_TOKEN; either the short API key or the long read token works.
+const tmdbSecret = (process.env.TMDB_TOKEN || process.env.TMDB_KEY || process.env.TMDB || "").trim();
+const TMDB_TOKEN = tmdbSecret.startsWith("eyJ") ? tmdbSecret : "";
+const TMDB_KEY = TMDB_TOKEN ? "" : tmdbSecret;
+
 const slug = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
   .replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-const norm = (s) => slug(s).replace(/^(the|a|an)-/, "");
+const idOf = (p) => p.id || slug(p.answer);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function getJSON(url, headers = {}) {
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     const res = await fetch(url, { headers });
-    if (res.status === 429 || res.status === 403) { await new Promise((r) => setTimeout(r, 1500 * (attempt + 1))); continue; }
-    if (!res.ok) throw new Error(`${res.status} ${url.replace(/(key|api_key)=[^&]+/, "$1=…")}`);
+    if (res.status === 429 || res.status === 403) { await sleep(1500 * (attempt + 1)); continue; }
+    if (!res.ok) throw new Error(`${res.status} ${url.replace(/(api_key)=[^&]+/, "$1=…")}`);
     return res.json();
   }
   throw new Error(`rate limited: ${url}`);
 }
 
-// Pick n images spread evenly across a list that is already ordered hardest → easiest,
-// so the first pick is the most obscure image and the last is the most iconic.
-function pick(urls, n) {
-  const uniq = [...new Set(urls)].filter(Boolean);
-  if (uniq.length <= n) return uniq;
-  const picks = [];
-  for (let i = 0; i < n; i++) picks.push(uniq[Math.round((i * (uniq.length - 1)) / (n - 1))]);
-  return [...new Set(picks)];
-}
-const pickSix = (urls) => pick(urls, 6);
+// Hints unlock one per miss, hardest first. Empty values are dropped.
+const hintRows = (rows) => rows.filter(([, v]) => v !== undefined && v !== null && String(v).trim() !== "").slice(0, 5);
+const names = (list, n) => (list || []).slice(0, n).map((x) => x.name || x.description || x).filter(Boolean).join(", ");
 
-/* ---------------- TMDB (movies + shows) ---------------- */
+/* ---------------- TMDB hints (movies + shows) ---------------- */
 function tmdb(path, params = {}) {
   const q = new URLSearchParams(params);
   const headers = { accept: "application/json" };
@@ -56,141 +50,118 @@ function tmdb(path, params = {}) {
   return getJSON(`https://api.themoviedb.org/3${path}?${q}`, headers);
 }
 
-async function tmdbFind(kind, p) {
-  if (p.tmdb) return p.tmdb;
-  if (p.imdb) {
-    // Exact match by IMDb id (no guessing between remakes or same-name titles).
-    const f = await tmdb(`/find/${p.imdb}`, { external_source: "imdb_id" });
-    const hit = (kind === "movie" ? f.movie_results : f.tv_results)[0];
-    if (hit) return hit.id;
-  }
-  const yearParam = kind === "movie" ? "primary_release_year" : "first_air_date_year";
-  let r = await tmdb(`/search/${kind}`, { query: p.answer, ...(p.year ? { [yearParam]: p.year } : {}) });
-  if (!r.results.length && p.year) r = await tmdb(`/search/${kind}`, { query: p.answer });
-  if (!r.results.length) throw new Error("no TMDB match");
-  const exact = r.results.find((x) => norm(x.title || x.name) === norm(p.answer));
-  return (exact || r.results[0]).id;
-}
-
-// Text-free backdrops (no title cards), least-voted first.
-const cleanBackdrops = (imgs) => imgs.backdrops
-  .filter((b) => b.iso_639_1 === null || b.iso_639_1 === "xx")
-  .sort((a, b) => a.vote_count - b.vote_count || a.vote_average - b.vote_average)
-  .map((b) => IMG + b.file_path);
-
-// Hints are revealed one per miss, hardest first. Empty values are dropped.
-const hintRows = (rows) => rows.filter(([, v]) => v !== undefined && v !== null && String(v).trim() !== "").slice(0, 5);
-const names = (list, n) => (list || []).slice(0, n).map((x) => x.name || x.description || x).filter(Boolean).join(", ");
-
-async function movieFrames(p) {
-  const id = await tmdbFind("movie", p);
-  const [imgs, info] = await Promise.all([
-    tmdb(`/movie/${id}/images`),
-    tmdb(`/movie/${id}`, { append_to_response: "credits" }),
-  ]);
-  let urls = cleanBackdrops(imgs);
-  if (urls.length < 6) urls = urls.concat(imgs.backdrops.map((b) => IMG + b.file_path));
+async function movieHints(p) {
+  const f = await tmdb(`/find/${p.imdb}`, { external_source: "imdb_id" });
+  const hit = f.movie_results[0];
+  if (!hit) throw new Error("not found on TMDB");
+  const info = await tmdb(`/movie/${hit.id}`, { append_to_response: "credits" });
   const cast = info.credits?.cast || [];
   const directors = (info.credits?.crew || []).filter((c) => c.job === "Director");
-  const hints = hintRows([
-    ["Genre", names(info.genres, 2)],
-    ["Released", p.year || (info.release_date || "").slice(0, 4)],
-    ["Director", names(directors, 2)],
-    ["Also starring", names(cast.slice(1), 2)],
-    ["Lead actor", cast[0]?.name],
-  ]);
-  return { id, frames: pickSix(urls), hints, series: info.belongs_to_collection?.name };
+  return {
+    hints: hintRows([
+      ["Genre", names(info.genres, 2)],
+      ["Released", p.year || (info.release_date || "").slice(0, 4)],
+      ["Director", names(directors, 2)],
+      ["Also starring", names(cast.slice(1), 2)],
+      ["Lead actor", cast[0]?.name],
+    ]),
+    series: info.belongs_to_collection?.name,
+  };
 }
 
-async function showFrames(p) {
-  const id = await tmdbFind("tv", p);
-  const show = await tmdb(`/tv/${id}`, { append_to_response: "aggregate_credits" });
-  // Early frames: episode stills from across the run (harder). Late frames: show backdrops (easier).
-  const seasons = show.seasons.filter((s) => s.season_number > 0 && s.episode_count > 0);
-  const stills = [];
-  for (const s of seasons.slice(0, 3)) {
-    try {
-      const season = await tmdb(`/tv/${id}/season/${s.season_number}`);
-      for (const ep of season.episodes) if (ep.still_path) stills.push(IMG + ep.still_path);
-    } catch { /* some seasons have no details */ }
-  }
-  const backdrops = cleanBackdrops(await tmdb(`/tv/${id}/images`));
-  // Frames 1-3: episode stills (random moments, hardest).
-  // Frames 4-6: key art, least-used first, ending on the most iconic backdrop.
-  const early = pick(stills, 3);
-  const late = pick(backdrops, 6 - early.length);
-  let frames = [...new Set([...early, ...late])];
-  if (frames.length < 6) frames = pickSix([...stills, ...backdrops]);
+async function showHints(p, tmdbId) {
+  const show = await tmdb(`/tv/${tmdbId}`, { append_to_response: "aggregate_credits" });
   const cast = [...(show.aggregate_credits?.cast || [])].sort((a, b) => (b.total_episode_count || 0) - (a.total_episode_count || 0));
-  const hints = hintRows([
-    ["Genre", names(show.genres, 2)],
-    ["First aired", p.year || (show.first_air_date || "").slice(0, 4)],
-    ["Network", names(show.networks, 1)],
-    ["Created by", names(show.created_by, 2)],
-    ["Starring", names(cast, 2)],
-  ]);
-  return { id, frames: frames.slice(0, 6), hints };
+  return {
+    hints: hintRows([
+      ["Genre", names(show.genres, 2)],
+      ["First aired", p.year || (show.first_air_date || "").slice(0, 4)],
+      ["Network", names(show.networks, 1)],
+      ["Created by", names(show.created_by, 2)],
+      ["Starring", names(cast, 2)],
+    ]),
+  };
 }
 
 /* ---------------- Steam (games, no key needed) ---------------- */
-const steamApi = (path, params) =>
-  getJSON(`https://store.steampowered.com/api/${path}?${new URLSearchParams({ l: "english", cc: "US", ...params })}`);
+const steamApi = (params) =>
+  getJSON(`https://store.steampowered.com/api/appdetails?${new URLSearchParams({ l: "english", cc: "US", ...params })}`);
 
 async function steamDetails(appid) {
-  await new Promise((r) => setTimeout(r, 400)); // stay under Steam's rate limit
-  const r = await steamApi("appdetails", { appids: String(appid) });
+  await sleep(400); // stay under Steam's rate limit
+  const r = await steamApi({ appids: String(appid) });
   const entry = r[appid];
   return entry && entry.success ? entry.data : null;
 }
 
-async function gameFrames(p) {
-  let data = p.steam ? await steamDetails(p.steam) : null;
-  // A pinned id that disappeared or points at a different game → fall back to search.
-  if (!data || (!norm(data.name).includes(norm(p.answer).split("-")[0]))) {
-    const r = await steamApi("storesearch/", { term: p.answer });
-    const items = r.items || [];
-    if (!items.length) throw new Error("no Steam match");
-    const best = items.find((g) => norm(g.name) === norm(p.answer)) || items[0];
-    data = await steamDetails(best.id);
-    if (!data) throw new Error("Steam details unavailable");
-  }
-  // Developers list their most iconic screenshot first, so reverse for hardest → easiest.
-  const shots = (data.screenshots || []).map((s) => s.path_full);
-  const frames = pickSix(shots).reverse();
-  // Some store pages only have 5 screenshots; top up with the store backdrop art.
-  for (const extra of [data.background_raw, data.background]) {
-    if (frames.length < 6 && extra && !frames.includes(extra)) frames.push(extra);
+// Screenshot URLs end in .../ss_<40 hex>.1920x1080.jpg or .../<number>.1920x1080.jpg
+function shotKey(url) {
+  const m = url.match(/\/(?:ss_)?([a-f0-9]{40}|\d+)\.1920x1080\.jpg/);
+  if (!m) return null;
+  return /^\d+$/.test(m[1]) && m[1].length <= 12 ? String(parseInt(m[1], 10)) : m[1];
+}
+
+async function gameEntry(p, pick) {
+  const details = [];
+  for (const app of pick.apps) details.push(await steamDetails(app));
+  const main = details[0];
+  if (!main) throw new Error(`Steam app ${pick.apps[0]} unavailable`);
+  const pool = details.flatMap((d) => (d?.screenshots || []).map((s) => s.path_full.split("?")[0]));
+  const frames = [];
+  for (const key of pick.keys) {
+    // Short all-digit keys are Steam's numeric screenshot ids; longer keys are hash prefixes.
+    const numericId = /^\d+$/.test(key) && key.length < 8;
+    const url = pool.find((u) => { const k = shotKey(u); return k && (numericId ? k === key : k.startsWith(key)); });
+    if (url) frames.push(url); else problems.push(`games: ${p.answer} – picked screenshot ${key} no longer on Steam`);
   }
   const hints = hintRows([
-    ["Genre", names((data.genres || []).filter((g) => !/free to play|early access|indie/i.test(g.description)), 2)],
-    ["Released", p.year || (data.release_date?.date || "").slice(-4)],
-    ["Metacritic", data.metacritic?.score],
-    ["Publisher", names(data.publishers, 1)],
-    ["Developer", names(data.developers, 1)],
+    ["Genre", names((main.genres || []).filter((g) => !/free to play|early access|indie/i.test(g.description)), 2)],
+    ["Released", p.year || (main.release_date?.date || "").slice(-4)],
+    ["Metacritic", main.metacritic?.score],
+    ["Publisher", names(main.publishers, 1)],
+    ["Developer", names(main.developers, 1)],
   ]);
-  return { id: `${data.steam_appid} ${data.name}`, frames, hints };
+  return { frames, hints };
 }
 
 /* ---------------- Run ---------------- */
-const jobs = [
-  ["movies", movieFrames, TMDB_TOKEN || TMDB_KEY, "TMDB"],
-  ["shows", showFrames, TMDB_TOKEN || TMDB_KEY, "TMDB"],
-  ["games", gameFrames, true, ""],
-];
+const haveTmdb = Boolean(TMDB_TOKEN || TMDB_KEY);
+if (!haveTmdb) console.log("⚠ TMDB not set — movie/show frames still work, but their hints are skipped");
 
-for (const [cat, fn, haveKey, keyName] of jobs) {
-  if (!haveKey) { console.log(`⚠ ${keyName} not set — skipping ${cat}`); continue; }
-  for (const p of data[cat].puzzles) {
-    if (p.frames) continue;
-    try {
-      const { id, frames, hints, series } = await fn(p);
-      if (frames.length < 6) problems.push(`${cat}: ${p.answer} only has ${frames.length} images`);
-      out[cat][p.id || slug(p.answer)] = { frames, hints, ...(series ? { series } : {}) };
-      console.log(`✓ ${cat.padEnd(6)} ${p.answer} → ${id} (${frames.length})`);
-    } catch (e) {
-      problems.push(`${cat}: ${p.answer} – ${e.message}`);
-      console.log(`✗ ${cat.padEnd(6)} ${p.answer} – ${e.message}`);
-    }
+for (const p of data.movies.puzzles) {
+  const picked = stills.movies[p.imdb];
+  if (!picked) { problems.push(`movies: ${p.answer} has no hand-picked frames`); continue; }
+  const entry = { frames: picked.map((f) => IMG + f) };
+  if (haveTmdb) {
+    try { Object.assign(entry, await movieHints(p)); }
+    catch (e) { problems.push(`movies: ${p.answer} hints – ${e.message}`); }
+  }
+  out.movies[idOf(p)] = entry;
+  console.log(`✓ movie  ${p.answer}${entry.hints ? "" : " (no hints)"}`);
+}
+
+for (const p of data.shows.puzzles) {
+  const picked = stills.shows[idOf(p)];
+  if (!picked) { problems.push(`shows: ${p.answer} has no hand-picked frames`); continue; }
+  const entry = { frames: picked.frames.map((f) => IMG + f) };
+  if (haveTmdb) {
+    try { Object.assign(entry, await showHints(p, picked.tmdb)); }
+    catch (e) { problems.push(`shows: ${p.answer} hints – ${e.message}`); }
+  }
+  out.shows[idOf(p)] = entry;
+  console.log(`✓ show   ${p.answer}${entry.hints ? "" : " (no hints)"}`);
+}
+
+for (const p of data.games.puzzles) {
+  const picked = stills.games[idOf(p)];
+  if (!picked) { problems.push(`games: ${p.answer} has no hand-picked frames`); continue; }
+  try {
+    const entry = await gameEntry(p, picked);
+    out.games[idOf(p)] = entry;
+    console.log(`✓ game   ${p.answer} (${entry.frames.length}/6)`);
+  } catch (e) {
+    problems.push(`games: ${p.answer} – ${e.message}`);
+    console.log(`✗ game   ${p.answer} – ${e.message}`);
   }
 }
 

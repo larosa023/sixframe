@@ -3,8 +3,8 @@
  "ext": "jpg",
  "movies": {
   "pool": [
-   "King Kong",
    "The Terminator",
+   "My Left Foot",
    "The Lord of the Rings: The Fellowship of the Ring",
    "Kill Bill: Vol. 1",
    "The Silence of the Lambs",
@@ -192,9 +192,9 @@
     "imdb": "tt0482571"
    },
    {
-    "answer": "My Left Foot",
-    "year": 1989,
-    "imdb": "tt0097937"
+    "answer": "King Kong",
+    "year": 2005,
+    "imdb": "tt0360717"
    },
    {
     "answer": "The Shawshank Redemption",
@@ -620,8 +620,6 @@
  },
  "shows": {
   "pool": [
-   "Peep Show",
-   "The Bridge",
    "Neon Genesis Evangelion",
    "Justice League",
    "The Knick",
@@ -648,6 +646,8 @@
    "Red Dwarf",
    "Trailer Park Boys",
    "Utopia",
+   "Mystery Science Theater 3000",
+   "The Adventures of Sherlock Holmes",
    "Stranger Things",
    "Succession",
    "The Bear",
@@ -662,11 +662,8 @@
   ],
   "puzzles": [
    {
-    "answer": "Mystery Science Theater 3000",
-    "year": 1988,
-    "aliases": [
-     "MST3K"
-    ]
+    "answer": "Peep Show",
+    "year": 2003
    },
    {
     "answer": "Oz",
@@ -949,8 +946,13 @@
     "year": 1995
    },
    {
-    "answer": "The Adventures of Sherlock Holmes",
-    "year": 1984
+    "answer": "The Bridge",
+    "year": 2011,
+    "aliases": [
+     "Bron",
+     "Broen",
+     "Bron/Broen"
+    ]
    },
    {
     "answer": "The Simpsons",
@@ -1157,7 +1159,10 @@
    },
    {
     "answer": "Daredevil",
-    "year": 2015
+    "year": 2015,
+    "aliases": [
+     "Marvel's Daredevil"
+    ]
    },
    {
     "answer": "Friday Night Lights",
@@ -1207,22 +1212,34 @@
    "Grand Theft Auto: Vice City",
    "The Sims",
    "Bloodborne",
-   "Tomb Raider",
    "Sonic the Hedgehog",
    "Halo 3",
    "Super Mario Odyssey",
    "Rocket League",
    "Gears of War",
    "Hotline Miami",
-   "Dishonored 2",
-   "Cuphead",
    "Hollow Knight",
    "Elden Ring",
    "Cyberpunk 2077",
    "Baldur's Gate 3",
    "Hades",
    "Sekiro: Shadows Die Twice",
-   "Dark Souls III"
+   "Dark Souls III",
+   "Civilization IV",
+   "Katamari Damacy",
+   "Myst",
+   "Shenmue",
+   "Star Wars: TIE Fighter",
+   "Quake III Arena",
+   "Wolfenstein 3D",
+   "Fallout",
+   "Okami",
+   "Persona 5",
+   "Titanfall 2",
+   "Persona 4",
+   "Civilization V",
+   "Dark Souls",
+   "Mass Effect 2"
   ],
   "puzzles": [
    {
@@ -1343,15 +1360,18 @@
    {
     "answer": "Mass Effect",
     "year": 2007,
-    "steam": 17460
+    "aliases": [
+     "Mass Effect Legendary Edition"
+    ],
+    "steam": 1328670
    },
    {
-    "answer": "Okami",
-    "year": 2006,
+    "answer": "Monster Hunter: World",
+    "year": 2018,
     "aliases": [
-     "Ōkami"
+     "MHW"
     ],
-    "steam": 587620
+    "steam": 582010
    },
    {
     "answer": "Grim Fandango",
@@ -1422,22 +1442,17 @@
     "steam": 413150
    },
    {
-    "answer": "Civilization IV",
-    "year": 2005,
-    "aliases": [
-     "Civ 4",
-     "Sid Meier's Civilization IV"
-    ],
-    "steam": 3900
+    "answer": "XCOM 2",
+    "year": 2016,
+    "steam": 268500
    },
    {
-    "answer": "Persona 5",
-    "year": 2016,
+    "answer": "Tomb Raider",
+    "year": 2013,
     "aliases": [
-     "Persona 5 Royal",
-     "P5R"
+     "Tomb Raider 2013"
     ],
-    "steam": 1687950
+    "steam": 203160
    },
    {
     "answer": "Metal Gear Solid 2: Sons of Liberty",
@@ -1478,9 +1493,9 @@
     "steam": 976730
    },
    {
-    "answer": "Katamari Damacy",
-    "year": 2004,
-    "steam": 848350
+    "answer": "Dishonored 2",
+    "year": 2016,
+    "steam": 403640
    },
    {
     "answer": "Uncharted 4: A Thief's End",
@@ -1544,9 +1559,9 @@
     "steam": 238210
    },
    {
-    "answer": "Titanfall 2",
-    "year": 2016,
-    "steam": 1237970
+    "answer": "Destiny 2",
+    "year": 2017,
+    "steam": 1085660
    },
    {
     "answer": "Batman: Arkham City",
@@ -1584,9 +1599,9 @@
     "steam": 1173820
    },
    {
-    "answer": "Myst",
-    "year": 1993,
-    "steam": 1255560
+    "answer": "Rayman Legends",
+    "year": 2013,
+    "steam": 242550
    },
    {
     "answer": "Red Dead Redemption 2",
@@ -1617,7 +1632,7 @@
    {
     "answer": "BioShock",
     "year": 2007,
-    "steam": 409710
+    "steam": 7670
    },
    {
     "answer": "The Walking Dead",
@@ -1637,18 +1652,17 @@
     "steam": 39140
    },
    {
-    "answer": "Shenmue",
-    "year": 1999,
-    "steam": 758330
+    "answer": "FTL: Faster Than Light",
+    "year": 2012,
+    "aliases": [
+     "FTL"
+    ],
+    "steam": 212680
    },
    {
-    "answer": "Persona 4",
-    "year": 2008,
-    "aliases": [
-     "Persona 4 Golden",
-     "P4G"
-    ],
-    "steam": 1113000
+    "answer": "Fallout 2",
+    "year": 1998,
+    "steam": 38410
    },
    {
     "answer": "Resident Evil",
@@ -1659,12 +1673,12 @@
     "steam": 304240
    },
    {
-    "answer": "Star Wars: TIE Fighter",
-    "year": 1994,
+    "answer": "Monkey Island 2: LeChuck's Revenge",
+    "year": 1991,
     "aliases": [
-     "TIE Fighter"
+     "Monkey Island 2"
     ],
-    "steam": 355250
+    "steam": 32460
    },
    {
     "answer": "Portal",
@@ -1713,13 +1727,9 @@
     "steam": 524220
    },
    {
-    "answer": "Civilization V",
-    "year": 2010,
-    "aliases": [
-     "Civ 5",
-     "Sid Meier's Civilization V"
-    ],
-    "steam": 8930
+    "answer": "Gone Home",
+    "year": 2013,
+    "steam": 232430
    },
    {
     "answer": "Dragon Age: Origins",
@@ -1747,9 +1757,9 @@
     "steam": 22330
    },
    {
-    "answer": "Dark Souls",
-    "year": 2011,
-    "steam": 570940
+    "answer": "Heavy Rain",
+    "year": 2010,
+    "steam": 960910
    },
    {
     "answer": "Left 4 Dead 2",
@@ -1810,12 +1820,9 @@
     "steam": 1593500
    },
    {
-    "answer": "Quake III Arena",
-    "year": 1999,
-    "aliases": [
-     "Quake 3"
-    ],
-    "steam": 2200
+    "answer": "Company of Heroes",
+    "year": 2006,
+    "steam": 228200
    },
    {
     "answer": "Age of Empires II",
@@ -1847,7 +1854,7 @@
    {
     "answer": "Horizon Zero Dawn",
     "year": 2017,
-    "steam": 1151640
+    "steam": 2561580
    },
    {
     "answer": "Celeste",
@@ -1868,12 +1875,13 @@
     "steam": 200510
    },
    {
-    "answer": "Mass Effect 2",
-    "year": 2010,
+    "answer": "Divinity: Original Sin II",
+    "year": 2017,
     "aliases": [
-     "ME2"
+     "Divinity Original Sin 2",
+     "DOS2"
     ],
-    "steam": 24980
+    "steam": 435150
    },
    {
     "answer": "Deus Ex",
@@ -1905,17 +1913,17 @@
     "steam": 13600
    },
    {
-    "answer": "Wolfenstein 3D",
-    "year": 1992,
-    "steam": 2270
+    "answer": "Dota 2",
+    "year": 2013,
+    "aliases": [
+     "Dota"
+    ],
+    "steam": 570
    },
    {
-    "answer": "Fallout",
-    "year": 1997,
-    "aliases": [
-     "Fallout 1"
-    ],
-    "steam": 38400
+    "answer": "Cuphead",
+    "year": 2017,
+    "steam": 268910
    },
    {
     "answer": "Portal 2",

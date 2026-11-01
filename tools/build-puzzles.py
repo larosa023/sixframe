@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 START = "2026-07-24"
 
 DECOYS = {
-    "movies": ["King Kong", "The Terminator", "The Lord of the Rings: The Fellowship of the Ring", "Kill Bill: Vol. 1",
+    "movies": ["The Terminator", "My Left Foot", "The Lord of the Rings: The Fellowship of the Ring", "Kill Bill: Vol. 1",
                "The Silence of the Lambs", "The Color of Money", "This Is England", "It's a Wonderful Life",
                "Children of Men", "In the Name of the Father", "American History X", "12 Monkeys",
                "Dog Day Afternoon", "The Untouchables", "Close Encounters of the Third Kind",
@@ -27,7 +27,7 @@ DECOYS = {
               "I'm Alan Partridge", "Ghost in the Shell: Stand Alone Complex", "Rurouni Kenshin", "Monster",
               "Jeeves and Wooster", "Yu Yu Hakusho", "Mushi-Shi", "Endeavour", "Lost", "Prison Break", "Fringe",
               "Person of Interest", "Jessica Jones", "Silicon Valley", "Outlander", "Boston Legal", "Red Dwarf",
-              "Trailer Park Boys", "Utopia", "Stranger Things", "Succession", "The Bear", "Severance",
+              "Trailer Park Boys", "Utopia", "Mystery Science Theater 3000", "The Adventures of Sherlock Holmes", "Stranger Things", "Succession", "The Bear", "Severance",
               "The Last of Us", "The Mandalorian", "Squid Game", "Ted Lasso", "Arcane", "The Crown", "The Boys"],
     "games": ["Tetris", "The Legend of Zelda: Ocarina of Time", "Super Mario 64", "World of Warcraft",
               "Super Mario World", "Chrono Trigger", "The Legend of Zelda: A Link to the Past", "GoldenEye 007",
@@ -39,7 +39,10 @@ DECOYS = {
               "Grand Theft Auto: Vice City", "The Sims", "Bloodborne", "Tomb Raider", "Sonic the Hedgehog",
               "Halo 3", "Super Mario Odyssey", "Rocket League", "Gears of War", "Fallout 4", "Kingdom Hearts",
               "Hotline Miami", "Dishonored 2", "Cuphead", "Hollow Knight", "Elden Ring", "Cyberpunk 2077",
-              "Baldur's Gate 3", "Hades", "Sekiro: Shadows Die Twice", "Dark Souls III"],
+              "Baldur's Gate 3", "Hades", "Sekiro: Shadows Die Twice", "Dark Souls III",
+              "Civilization IV", "Katamari Damacy", "Myst", "Shenmue", "Star Wars: TIE Fighter", "Quake III Arena",
+              "Wolfenstein 3D", "Fallout", "Okami", "Persona 5", "Titanfall 2", "Persona 4", "Civilization V",
+              "Dark Souls", "Mass Effect 2"],
 }
 
 

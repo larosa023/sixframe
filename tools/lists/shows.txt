@@ -1,6 +1,7 @@
 # Source: listchallenges.com "Top 1000 Television Series (IMDb)", in rank order.
 # Skipped: talk/news/reality/documentary, web series, duplicate seasons or reboots of the same show,
-# and a few regional titles with no wide release.
+# a few regional titles with no wide release, and shows with no real episode stills on TMDB
+# (MST3K -> Peep Show, The Adventures of Sherlock Holmes -> The Bridge).
 # answer|year|aliases (;-separated)
 Game of Thrones|2011|GOT
 Breaking Bad|2008
@@ -40,7 +41,7 @@ Code Geass: Lelouch of the Rebellion|2006|Code Geass
 House|2004|House MD;House M.D.
 South Park|1997
 The Office|2005|The Office US
-Daredevil|2015
+Daredevil|2015|Marvel's Daredevil
 Doctor Who|2005
 It's Always Sunny in Philadelphia|2005|Always Sunny
 Battlestar Galactica|2004|BSG
@@ -57,7 +58,7 @@ Peaky Blinders|2013
 Chappelle's Show|2003|Chappelles Show
 Blackadder|1983|Black Adder
 Steins;Gate|2011|Steins Gate
-The Adventures of Sherlock Holmes|1984
+The Bridge|2011|Bron;Broen;Bron/Broen
 The Thick of It|2005
 Brass Eye|1997
 Suits|2011
@@ -77,7 +78,7 @@ Flight of the Conchords|2007
 Spaced|1999
 Dragon Ball|1986
 Father Ted|1995
-Mystery Science Theater 3000|1988|MST3K
+Peep Show|2003
 Berserk|1997
 Lucifer|2016
 The Prisoner|1967
