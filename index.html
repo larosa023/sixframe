@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sixframe — daily frame guessing</title>
+  <meta name="description" content="Guess the movie, show, or video game from six frames. New puzzles every day at midnight Eastern.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ffb547'/><text x='50' y='70' font-size='60' text-anchor='middle' font-family='Arial' font-weight='900' fill='%23111'>6</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#/">SIX<span>FRAME</span></a>
+    <div class="clock" title="Puzzles reset at midnight Eastern Time">
+      <span class="clock-label">Next puzzles in</span>
+      <span id="countdown">--:--:--</span>
+    </div>
+    <button id="statsBtn" class="icon-btn" aria-label="Stats">📊</button>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <a data-cat="movies" href="#/movies">🎬 Movies</a>
+    <a data-cat="shows" href="#/shows">📺 Shows</a>
+    <a data-cat="games" href="#/games">🎮 Games</a>
+    <a data-cat="archive" href="#/archive">🗂 Archive</a>
+  </nav>
+
+  <main id="app"></main>
+
+  <dialog id="statsDlg">
+    <div id="statsBody"></div>
+    <form method="dialog"><button class="btn">Close</button></form>
+  </dialog>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="foot">
+    Frames are shown for identification and commentary. Day changes at 12:00 AM ET.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

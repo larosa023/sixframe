@@ -1,0 +1,585 @@
+{
+ "start": "2026-11-01",
+ "ext": "jpg",
+ "movies": {
+  "pool": [
+   "Avatar",
+   "Avengers: Endgame",
+   "Star Wars",
+   "The Terminator",
+   "Psycho",
+   "E.T. the Extra-Terrestrial",
+   "Casablanca",
+   "Fight Club",
+   "Se7en",
+   "Joker",
+   "Frozen",
+   "Coco",
+   "Ratatouille",
+   "Heat",
+   "Scarface",
+   "The Departed",
+   "Arrival",
+   "Blade Runner",
+   "No Country for Old Men",
+   "La La Land"
+  ],
+  "puzzles": [
+   {
+    "answer": "Jaws",
+    "year": 1975
+   },
+   {
+    "answer": "The Matrix",
+    "year": 1999
+   },
+   {
+    "answer": "Jurassic Park",
+    "year": 1993
+   },
+   {
+    "answer": "Back to the Future",
+    "year": 1985,
+    "aliases": [
+     "BTTF"
+    ]
+   },
+   {
+    "answer": "The Dark Knight",
+    "year": 2008
+   },
+   {
+    "answer": "Inception",
+    "year": 2010
+   },
+   {
+    "answer": "Titanic",
+    "year": 1997
+   },
+   {
+    "answer": "Pulp Fiction",
+    "year": 1994
+   },
+   {
+    "answer": "The Shawshank Redemption",
+    "year": 1994,
+    "aliases": [
+     "Shawshank"
+    ]
+   },
+   {
+    "answer": "Spirited Away",
+    "year": 2001
+   },
+   {
+    "answer": "Parasite",
+    "year": 2019
+   },
+   {
+    "answer": "Mad Max: Fury Road",
+    "year": 2015,
+    "aliases": [
+     "Fury Road"
+    ]
+   },
+   {
+    "answer": "The Lion King",
+    "year": 1994
+   },
+   {
+    "answer": "Forrest Gump",
+    "year": 1994
+   },
+   {
+    "answer": "Gladiator",
+    "year": 2000
+   },
+   {
+    "answer": "The Godfather",
+    "year": 1972
+   },
+   {
+    "answer": "Interstellar",
+    "year": 2014
+   },
+   {
+    "answer": "Toy Story",
+    "year": 1995
+   },
+   {
+    "answer": "Alien",
+    "year": 1979
+   },
+   {
+    "answer": "Raiders of the Lost Ark",
+    "year": 1981,
+    "aliases": [
+     "Indiana Jones"
+    ]
+   },
+   {
+    "answer": "Die Hard",
+    "year": 1988
+   },
+   {
+    "answer": "Get Out",
+    "year": 2017
+   },
+   {
+    "answer": "The Social Network",
+    "year": 2010
+   },
+   {
+    "answer": "Up",
+    "year": 2009
+   },
+   {
+    "answer": "Whiplash",
+    "year": 2014
+   },
+   {
+    "answer": "Oppenheimer",
+    "year": 2023
+   },
+   {
+    "answer": "Barbie",
+    "year": 2023
+   },
+   {
+    "answer": "Top Gun: Maverick",
+    "year": 2022
+   },
+   {
+    "answer": "Everything Everywhere All at Once",
+    "year": 2022,
+    "aliases": [
+     "EEAAO"
+    ]
+   },
+   {
+    "answer": "Dune",
+    "year": 2021,
+    "aliases": [
+     "Dune: Part One"
+    ]
+   },
+   {
+    "answer": "The Silence of the Lambs",
+    "year": 1991
+   },
+   {
+    "answer": "Goodfellas",
+    "year": 1990
+   },
+   {
+    "answer": "Shrek",
+    "year": 2001
+   },
+   {
+    "answer": "Finding Nemo",
+    "year": 2003
+   },
+   {
+    "answer": "Rocky",
+    "year": 1976
+   }
+  ]
+ },
+ "shows": {
+  "pool": [
+   "The Sopranos",
+   "Fargo",
+   "True Detective",
+   "Westworld",
+   "Euphoria",
+   "House",
+   "Grey's Anatomy",
+   "The Big Bang Theory",
+   "How I Met Your Mother",
+   "Sherlock",
+   "Doctor Who",
+   "Narcos",
+   "Ozark",
+   "Mindhunter",
+   "Black Mirror",
+   "The X-Files",
+   "Cowboy Bebop",
+   "Death Note",
+   "One Piece",
+   "Rick and Morty"
+  ],
+  "puzzles": [
+   {
+    "answer": "Breaking Bad",
+    "year": 2008
+   },
+   {
+    "answer": "The Office",
+    "year": 2005,
+    "aliases": [
+     "The Office US"
+    ]
+   },
+   {
+    "answer": "Stranger Things",
+    "year": 2016
+   },
+   {
+    "answer": "Game of Thrones",
+    "year": 2011,
+    "aliases": [
+     "GOT"
+    ]
+   },
+   {
+    "answer": "Friends",
+    "year": 1994
+   },
+   {
+    "answer": "The Sopranos",
+    "year": 1999
+   },
+   {
+    "answer": "Seinfeld",
+    "year": 1989
+   },
+   {
+    "answer": "The Simpsons",
+    "year": 1989
+   },
+   {
+    "answer": "Better Call Saul",
+    "year": 2015
+   },
+   {
+    "answer": "The Last of Us",
+    "year": 2023
+   },
+   {
+    "answer": "Succession",
+    "year": 2018
+   },
+   {
+    "answer": "The Bear",
+    "year": 2022
+   },
+   {
+    "answer": "Severance",
+    "year": 2022
+   },
+   {
+    "answer": "The Mandalorian",
+    "year": 2019
+   },
+   {
+    "answer": "Mad Men",
+    "year": 2007
+   },
+   {
+    "answer": "The Wire",
+    "year": 2002
+   },
+   {
+    "answer": "Lost",
+    "year": 2004
+   },
+   {
+    "answer": "Squid Game",
+    "year": 2021
+   },
+   {
+    "answer": "Ted Lasso",
+    "year": 2020
+   },
+   {
+    "answer": "Arcane",
+    "year": 2021
+   },
+   {
+    "answer": "Avatar: The Last Airbender",
+    "year": 2005,
+    "aliases": [
+     "ATLA",
+     "Avatar"
+    ]
+   },
+   {
+    "answer": "Parks and Recreation",
+    "year": 2009,
+    "aliases": [
+     "Parks and Rec"
+    ]
+   },
+   {
+    "answer": "The Crown",
+    "year": 2016
+   },
+   {
+    "answer": "Wednesday",
+    "year": 2022
+   },
+   {
+    "answer": "Fleabag",
+    "year": 2016
+   },
+   {
+    "answer": "Twin Peaks",
+    "year": 1990
+   },
+   {
+    "answer": "The Boys",
+    "year": 2019
+   },
+   {
+    "answer": "Peaky Blinders",
+    "year": 2013
+   },
+   {
+    "answer": "Attack on Titan",
+    "year": 2013,
+    "aliases": [
+     "Shingeki no Kyojin"
+    ]
+   },
+   {
+    "answer": "Brooklyn Nine-Nine",
+    "year": 2013,
+    "aliases": [
+     "Brooklyn 99",
+     "B99"
+    ]
+   },
+   {
+    "answer": "Shogun",
+    "year": 2024,
+    "aliases": [
+     "Shōgun"
+    ]
+   },
+   {
+    "answer": "Chernobyl",
+    "year": 2019
+   },
+   {
+    "answer": "Dexter",
+    "year": 2006
+   },
+   {
+    "answer": "House of the Dragon",
+    "year": 2022
+   },
+   {
+    "answer": "The Walking Dead",
+    "year": 2010
+   }
+  ]
+ },
+ "games": {
+  "pool": [
+   "Dark Souls",
+   "Skyrim",
+   "Fallout 4",
+   "Call of Duty: Modern Warfare",
+   "Super Mario 64",
+   "Ocarina of Time",
+   "Doom",
+   "Death Stranding",
+   "Final Fantasy VII",
+   "Persona 5",
+   "Metal Gear Solid",
+   "Uncharted 2",
+   "Rocket League",
+   "League of Legends",
+   "Valorant",
+   "Terraria",
+   "Cuphead",
+   "Disco Elysium",
+   "Sonic the Hedgehog",
+   "Pac-Man"
+  ],
+  "puzzles": [
+   {
+    "answer": "The Legend of Zelda: Breath of the Wild",
+    "year": 2017,
+    "aliases": [
+     "Breath of the Wild",
+     "BOTW"
+    ]
+   },
+   {
+    "answer": "Elden Ring",
+    "year": 2022
+   },
+   {
+    "answer": "Minecraft",
+    "year": 2011
+   },
+   {
+    "answer": "Red Dead Redemption 2",
+    "year": 2018,
+    "aliases": [
+     "RDR2"
+    ]
+   },
+   {
+    "answer": "The Last of Us Part I",
+    "year": 2013,
+    "aliases": [
+     "The Last of Us"
+    ]
+   },
+   {
+    "answer": "Super Mario Odyssey",
+    "year": 2017
+   },
+   {
+    "answer": "Grand Theft Auto V",
+    "year": 2013,
+    "aliases": [
+     "GTA 5",
+     "GTA V"
+    ]
+   },
+   {
+    "answer": "Hollow Knight",
+    "year": 2017
+   },
+   {
+    "answer": "God of War",
+    "year": 2018
+   },
+   {
+    "answer": "Portal 2",
+    "year": 2011
+   },
+   {
+    "answer": "Celeste",
+    "year": 2018
+   },
+   {
+    "answer": "Halo: Combat Evolved",
+    "year": 2001,
+    "aliases": [
+     "Halo"
+    ]
+   },
+   {
+    "answer": "The Witcher 3: Wild Hunt",
+    "year": 2015,
+    "aliases": [
+     "Witcher 3"
+    ]
+   },
+   {
+    "answer": "Hades",
+    "year": 2020
+   },
+   {
+    "answer": "Stardew Valley",
+    "year": 2016
+   },
+   {
+    "answer": "Cyberpunk 2077",
+    "year": 2020
+   },
+   {
+    "answer": "Fortnite",
+    "year": 2017
+   },
+   {
+    "answer": "Among Us",
+    "year": 2018
+   },
+   {
+    "answer": "Baldur's Gate 3",
+    "year": 2023,
+    "aliases": [
+     "BG3"
+    ]
+   },
+   {
+    "answer": "Ghost of Tsushima",
+    "year": 2020
+   },
+   {
+    "answer": "Bloodborne",
+    "year": 2015
+   },
+   {
+    "answer": "Super Smash Bros. Ultimate",
+    "year": 2018,
+    "aliases": [
+     "Smash Ultimate"
+    ]
+   },
+   {
+    "answer": "Animal Crossing: New Horizons",
+    "year": 2020,
+    "aliases": [
+     "Animal Crossing"
+    ]
+   },
+   {
+    "answer": "Overwatch",
+    "year": 2016
+   },
+   {
+    "answer": "BioShock",
+    "year": 2007
+   },
+   {
+    "answer": "Half-Life 2",
+    "year": 2004
+   },
+   {
+    "answer": "Shadow of the Colossus",
+    "year": 2005
+   },
+   {
+    "answer": "Undertale",
+    "year": 2015
+   },
+   {
+    "answer": "Mass Effect 2",
+    "year": 2010
+   },
+   {
+    "answer": "Sekiro: Shadows Die Twice",
+    "year": 2019,
+    "aliases": [
+     "Sekiro"
+    ]
+   },
+   {
+    "answer": "Marvel's Spider-Man",
+    "year": 2018,
+    "aliases": [
+     "Spider-Man PS4"
+    ]
+   },
+   {
+    "answer": "Resident Evil 4",
+    "year": 2005,
+    "aliases": [
+     "RE4"
+    ]
+   },
+   {
+    "answer": "Tetris",
+    "year": 1984
+   },
+   {
+    "answer": "Pokémon Red and Blue",
+    "year": 1996,
+    "aliases": [
+     "Pokemon Red",
+     "Pokemon Blue"
+    ]
+   },
+   {
+    "answer": "Outer Wilds",
+    "year": 2019
+   }
+  ]
+ }
+}
