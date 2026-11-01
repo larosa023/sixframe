@@ -24,13 +24,14 @@ Run locally: `python -m http.server` in this folder, then open http://localhost:
 - `data/puzzles.json` → `start` is puzzle **#1**. Every day after adds one.
 - Day boundaries are computed in `America/New_York`, DST included, in every visitor's browser. The page counts down to midnight ET and swaps to the new puzzles live, no refresh needed.
 - Puzzles rotate in list order. To lock a puzzle to a specific day, add `"date": "2026-12-25"` to it.
-- Add puzzles to the end of each list to extend the run. 35 per category are seeded (~5 weeks before repeats).
+- 100 puzzles per category, starting 2026-07-25, so the archive is full from launch. Day 101 loops back to puzzle 1, exactly when it drops out of the archive. Add puzzles to the end of a list to lengthen the cycle.
+- Difficulty: frames run from obscure to iconic, and frames 1–3 are zoomed into a detail (2.6×, 1.8×, 1.3×). Change `ZOOM` at the top of `app.js` to adjust.
 
 ## Automatic frames (Netlify)
 
 On every Netlify build, `tools/fetch-frames.mjs` looks up each puzzle and links 6 images: TMDB stills for movies and shows, Steam store screenshots for games (no key needed). Set this in **Netlify → Project configuration → Environment variables**, then redeploy:
 
-- `TMDB_TOKEN` – TMDB "API Read Access Token" (themoviedb.org → Settings → API)
+- `TMDB` – your TMDB API key or Read Access Token (themoviedb.org → Settings → API)
 
 The deploy log lists every match. If a title resolves to the wrong thing, pin it with `"tmdb": <id>` or `"steam": <app id>` on that puzzle.
 

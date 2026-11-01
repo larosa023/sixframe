@@ -6,6 +6,9 @@
 
   const TZ = "America/New_York";
   const MAX_TRIES = 6;
+  // Zoom per frame (1 = full image). Set all to 1 to turn the zoom off.
+  const ZOOM = [2.6, 1.8, 1.3, 1, 1, 1];
+  const hash = (s) => { let h = 2166136261; for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return h >>> 0; };
   const ARCHIVE_DAYS = 100;
   const CATS = {
     movies: { label: "Movies", emoji: "🎬" },
@@ -164,6 +167,15 @@
         frameBox.innerHTML = `<div class="ph"><div><b>${i + 1}</b>Frame image missing<br><code>${esc(frames[i])}</code></div></div>`;
       };
       img.src = frames[i];
+      // Early frames are zoomed into a detail; the zoom eases off each frame.
+      // Once the round is over every frame is shown in full.
+      const zoom = st.done ? 1 : ZOOM[i];
+      if (zoom > 1) {
+        const h = hash(`${cat}${day}${i}`);
+        const ox = 25 + (h % 51), oy = 25 + ((h >> 8) % 51);
+        img.style.transformOrigin = `${ox}% ${oy}%`;
+        img.style.transform = `scale(${zoom})`;
+      }
       frameBox.appendChild(img);
       // Preload the next unlocked frame for snappy reveals.
       if (frames[i + 1]) new Image().src = frames[i + 1];

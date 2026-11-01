@@ -165,3 +165,4 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
   .guess-row input { flex-basis: 100%; }
   .guess-row .btn { flex: 1; }
 }
+#frameBox { position: absolute; inset: 0; overflow: hidden; }

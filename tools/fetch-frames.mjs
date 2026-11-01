@@ -29,7 +29,7 @@ const norm = (s) => slug(s).replace(/^(the|a|an)-/, "");
 async function getJSON(url, headers = {}) {
   for (let attempt = 0; attempt < 3; attempt++) {
     const res = await fetch(url, { headers });
-    if (res.status === 429) { await new Promise((r) => setTimeout(r, 1500 * (attempt + 1))); continue; }
+    if (res.status === 429 || res.status === 403) { await new Promise((r) => setTimeout(r, 1500 * (attempt + 1))); continue; }
     if (!res.ok) throw new Error(`${res.status} ${url.replace(/(key|api_key)=[^&]+/, "$1=…")}`);
     return res.json();
   }
@@ -103,6 +103,7 @@ const steamApi = (path, params) =>
   getJSON(`https://store.steampowered.com/api/${path}?${new URLSearchParams({ l: "english", cc: "US", ...params })}`);
 
 async function steamDetails(appid) {
+  await new Promise((r) => setTimeout(r, 400)); // stay under Steam's rate limit
   const r = await steamApi("appdetails", { appids: String(appid) });
   const entry = r[appid];
   return entry && entry.success ? entry.data : null;

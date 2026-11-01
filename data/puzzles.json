@@ -1,64 +1,57 @@
 {
- "start": "2026-11-01",
+ "start": "2026-07-25",
  "ext": "jpg",
  "movies": {
   "pool": [
-   "Avatar",
-   "Avengers: Endgame",
-   "Star Wars",
-   "The Terminator",
-   "Psycho",
-   "E.T. the Extra-Terrestrial",
-   "Casablanca",
-   "Fight Club",
-   "Se7en",
-   "Joker",
-   "Frozen",
-   "Coco",
-   "Ratatouille",
-   "Heat",
-   "Scarface",
-   "The Departed",
-   "Arrival",
-   "Blade Runner",
-   "No Country for Old Men",
-   "La La Land"
+   "Aliens",
+   "Terminator 2: Judgment Day",
+   "The Empire Strikes Back",
+   "Return of the Jedi",
+   "Jurassic World",
+   "The Matrix Reloaded",
+   "Toy Story 3",
+   "Finding Dory",
+   "Shrek 2",
+   "Frozen II",
+   "Avengers: Infinity War",
+   "Spider-Man: No Way Home",
+   "The Dark Knight Rises",
+   "Batman Begins",
+   "Dune: Part Two",
+   "Mad Max 2",
+   "Rocky IV",
+   "Creed",
+   "Die Hard 2",
+   "Back to the Future Part II",
+   "Indiana Jones and the Temple of Doom",
+   "The Godfather Part II",
+   "Kill Bill: Vol. 2",
+   "Howl's Moving Castle",
+   "Moana",
+   "Encanto",
+   "Zootopia",
+   "Cars",
+   "Despicable Me",
+   "Minions",
+   "The Batman",
+   "Tenet",
+   "Memento",
+   "The Prestige",
+   "Prisoners",
+   "Sicario",
+   "Drive",
+   "Baby Driver",
+   "Nope",
+   "Us"
   ],
   "puzzles": [
    {
-    "answer": "Jaws",
-    "year": 1975
+    "answer": "Gladiator",
+    "year": 2000
    },
    {
-    "answer": "The Matrix",
-    "year": 1999
-   },
-   {
-    "answer": "Jurassic Park",
-    "year": 1993
-   },
-   {
-    "answer": "Back to the Future",
-    "year": 1985,
-    "aliases": [
-     "BTTF"
-    ]
-   },
-   {
-    "answer": "The Dark Knight",
-    "year": 2008
-   },
-   {
-    "answer": "Inception",
-    "year": 2010
-   },
-   {
-    "answer": "Titanic",
-    "year": 1997
-   },
-   {
-    "answer": "Pulp Fiction",
-    "year": 1994
+    "answer": "Blade Runner",
+    "year": 1982
    },
    {
     "answer": "The Shawshank Redemption",
@@ -68,86 +61,39 @@
     ]
    },
    {
+    "answer": "Django Unchained",
+    "year": 2012,
+    "aliases": [
+     "Django"
+    ]
+   },
+   {
+    "answer": "Saving Private Ryan",
+    "year": 1998
+   },
+   {
     "answer": "Spirited Away",
     "year": 2001
-   },
-   {
-    "answer": "Parasite",
-    "year": 2019
-   },
-   {
-    "answer": "Mad Max: Fury Road",
-    "year": 2015,
-    "aliases": [
-     "Fury Road"
-    ]
-   },
-   {
-    "answer": "The Lion King",
-    "year": 1994
-   },
-   {
-    "answer": "Forrest Gump",
-    "year": 1994
-   },
-   {
-    "answer": "Gladiator",
-    "year": 2000
-   },
-   {
-    "answer": "The Godfather",
-    "year": 1972
-   },
-   {
-    "answer": "Interstellar",
-    "year": 2014
-   },
-   {
-    "answer": "Toy Story",
-    "year": 1995
-   },
-   {
-    "answer": "Alien",
-    "year": 1979
-   },
-   {
-    "answer": "Raiders of the Lost Ark",
-    "year": 1981,
-    "aliases": [
-     "Indiana Jones"
-    ]
-   },
-   {
-    "answer": "Die Hard",
-    "year": 1988
-   },
-   {
-    "answer": "Get Out",
-    "year": 2017
-   },
-   {
-    "answer": "The Social Network",
-    "year": 2010
-   },
-   {
-    "answer": "Up",
-    "year": 2009
    },
    {
     "answer": "Whiplash",
     "year": 2014
    },
    {
-    "answer": "Oppenheimer",
-    "year": 2023
+    "answer": "WALL·E",
+    "year": 2008,
+    "aliases": [
+     "Wall-E",
+     "Walle"
+    ]
    },
    {
-    "answer": "Barbie",
-    "year": 2023
+    "answer": "The Departed",
+    "year": 2006
    },
    {
-    "answer": "Top Gun: Maverick",
-    "year": 2022
+    "answer": "Toy Story",
+    "year": 1995
    },
    {
     "answer": "Everything Everywhere All at Once",
@@ -157,6 +103,169 @@
     ]
    },
    {
+    "answer": "John Wick",
+    "year": 2014
+   },
+   {
+    "answer": "Hereditary",
+    "year": 2018
+   },
+   {
+    "answer": "Goodfellas",
+    "year": 1990
+   },
+   {
+    "answer": "Forrest Gump",
+    "year": 1994
+   },
+   {
+    "answer": "Harry Potter and the Sorcerer's Stone",
+    "year": 2001,
+    "aliases": [
+     "Harry Potter and the Philosopher's Stone",
+     "Harry Potter"
+    ]
+   },
+   {
+    "answer": "The Social Network",
+    "year": 2010
+   },
+   {
+    "answer": "Arrival",
+    "year": 2016
+   },
+   {
+    "answer": "Titanic",
+    "year": 1997
+   },
+   {
+    "answer": "The Dark Knight",
+    "year": 2008
+   },
+   {
+    "answer": "The Exorcist",
+    "year": 1973,
+    "aliases": [
+     "Exorcist"
+    ]
+   },
+   {
+    "answer": "Jaws",
+    "year": 1975
+   },
+   {
+    "answer": "The Wizard of Oz",
+    "year": 1939,
+    "aliases": [
+     "Wizard of Oz"
+    ]
+   },
+   {
+    "answer": "The Lion King",
+    "year": 1994
+   },
+   {
+    "answer": "Interstellar",
+    "year": 2014
+   },
+   {
+    "answer": "La La Land",
+    "year": 2016
+   },
+   {
+    "answer": "The Incredibles",
+    "year": 2004,
+    "aliases": [
+     "Incredibles"
+    ]
+   },
+   {
+    "answer": "Parasite",
+    "year": 2019
+   },
+   {
+    "answer": "Get Out",
+    "year": 2017
+   },
+   {
+    "answer": "The Grand Budapest Hotel",
+    "year": 2014,
+    "aliases": [
+     "Grand Budapest Hotel"
+    ]
+   },
+   {
+    "answer": "Finding Nemo",
+    "year": 2003
+   },
+   {
+    "answer": "Psycho",
+    "year": 1960
+   },
+   {
+    "answer": "The Avengers",
+    "year": 2012,
+    "aliases": [
+     "Avengers"
+    ]
+   },
+   {
+    "answer": "Se7en",
+    "year": 1995,
+    "aliases": [
+     "Seven"
+    ]
+   },
+   {
+    "answer": "Shrek",
+    "year": 2001
+   },
+   {
+    "answer": "Inception",
+    "year": 2010
+   },
+   {
+    "answer": "2001: A Space Odyssey",
+    "year": 1968,
+    "aliases": [
+     "2001"
+    ]
+   },
+   {
+    "answer": "The Terminator",
+    "year": 1984,
+    "aliases": [
+     "Terminator"
+    ]
+   },
+   {
+    "answer": "Ghostbusters",
+    "year": 1984
+   },
+   {
+    "answer": "The Shining",
+    "year": 1980,
+    "aliases": [
+     "Shining"
+    ]
+   },
+   {
+    "answer": "Ratatouille",
+    "year": 2007
+   },
+   {
+    "answer": "The Matrix",
+    "year": 1999
+   },
+   {
+    "answer": "Barbie",
+    "year": 2023
+   },
+   {
+    "answer": "Up",
+    "year": 2009
+   },
+   {
     "answer": "Dune",
     "year": 2021,
     "aliases": [
@@ -164,54 +273,393 @@
     ]
    },
    {
-    "answer": "The Silence of the Lambs",
-    "year": 1991
+    "answer": "Alien",
+    "year": 1979
    },
    {
-    "answer": "Goodfellas",
+    "answer": "Coco",
+    "year": 2017
+   },
+   {
+    "answer": "Raiders of the Lost Ark",
+    "year": 1981,
+    "aliases": [
+     "Indiana Jones"
+    ]
+   },
+   {
+    "answer": "Jurassic Park",
+    "year": 1993
+   },
+   {
+    "answer": "The Martian",
+    "year": 2015,
+    "aliases": [
+     "Martian"
+    ]
+   },
+   {
+    "answer": "My Neighbor Totoro",
+    "year": 1988,
+    "aliases": [
+     "Totoro"
+    ]
+   },
+   {
+    "answer": "Pan's Labyrinth",
+    "year": 2006
+   },
+   {
+    "answer": "Mean Girls",
+    "year": 2004
+   },
+   {
+    "answer": "1917",
+    "year": 2019
+   },
+   {
+    "answer": "Guardians of the Galaxy",
+    "year": 2014
+   },
+   {
+    "answer": "Schindler's List",
+    "year": 1993
+   },
+   {
+    "answer": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": 2001,
+    "aliases": [
+     "Fellowship of the Ring",
+     "Lord of the Rings"
+    ]
+   },
+   {
+    "answer": "Superbad",
+    "year": 2007
+   },
+   {
+    "answer": "The Truman Show",
+    "year": 1998,
+    "aliases": [
+     "Truman Show"
+    ]
+   },
+   {
+    "answer": "Inglourious Basterds",
+    "year": 2009,
+    "aliases": [
+     "Inglorious Basterds"
+    ]
+   },
+   {
+    "answer": "Mad Max: Fury Road",
+    "year": 2015,
+    "aliases": [
+     "Fury Road"
+    ]
+   },
+   {
+    "answer": "Inside Out",
+    "year": 2015
+   },
+   {
+    "answer": "Heat",
+    "year": 1995
+   },
+   {
+    "answer": "Scarface",
+    "year": 1983
+   },
+   {
+    "answer": "E.T. the Extra-Terrestrial",
+    "year": 1982,
+    "aliases": [
+     "ET",
+     "E.T."
+    ]
+   },
+   {
+    "answer": "Oppenheimer",
+    "year": 2023
+   },
+   {
+    "answer": "Eternal Sunshine of the Spotless Mind",
+    "year": 2004,
+    "aliases": [
+     "Eternal Sunshine"
+    ]
+   },
+   {
+    "answer": "Home Alone",
     "year": 1990
    },
    {
-    "answer": "Shrek",
-    "year": 2001
+    "answer": "Your Name.",
+    "year": 2016,
+    "aliases": [
+     "Your Name",
+     "Kimi no Na wa"
+    ]
    },
    {
-    "answer": "Finding Nemo",
-    "year": 2003
+    "answer": "Back to the Future",
+    "year": 1985,
+    "aliases": [
+     "BTTF"
+    ]
+   },
+   {
+    "answer": "Pulp Fiction",
+    "year": 1994
+   },
+   {
+    "answer": "Star Wars",
+    "year": 1977,
+    "aliases": [
+     "A New Hope",
+     "Star Wars: A New Hope"
+    ]
+   },
+   {
+    "answer": "Gravity",
+    "year": 2013
+   },
+   {
+    "answer": "The Breakfast Club",
+    "year": 1985
+   },
+   {
+    "answer": "Pirates of the Caribbean: The Curse of the Black Pearl",
+    "year": 2003,
+    "aliases": [
+     "Pirates of the Caribbean",
+     "Curse of the Black Pearl"
+    ]
+   },
+   {
+    "answer": "A Quiet Place",
+    "year": 2018,
+    "aliases": [
+     "Quiet Place"
+    ]
+   },
+   {
+    "answer": "Amélie",
+    "year": 2001,
+    "aliases": [
+     "Amelie"
+    ]
+   },
+   {
+    "answer": "Joker",
+    "year": 2019
+   },
+   {
+    "answer": "Monsters, Inc.",
+    "year": 2001,
+    "aliases": [
+     "Monsters Inc"
+    ]
+   },
+   {
+    "answer": "Fight Club",
+    "year": 1999
    },
    {
     "answer": "Rocky",
     "year": 1976
+   },
+   {
+    "answer": "The Silence of the Lambs",
+    "year": 1991
+   },
+   {
+    "answer": "Top Gun: Maverick",
+    "year": 2022
+   },
+   {
+    "answer": "Frozen",
+    "year": 2013
+   },
+   {
+    "answer": "It",
+    "year": 2017
+   },
+   {
+    "answer": "Halloween",
+    "year": 1978
+   },
+   {
+    "answer": "The Big Lebowski",
+    "year": 1998,
+    "aliases": [
+     "Big Lebowski"
+    ]
+   },
+   {
+    "answer": "Iron Man",
+    "year": 2008
+   },
+   {
+    "answer": "The Godfather",
+    "year": 1972
+   },
+   {
+    "answer": "Die Hard",
+    "year": 1988
+   },
+   {
+    "answer": "No Country for Old Men",
+    "year": 2007
+   },
+   {
+    "answer": "Ferris Bueller's Day Off",
+    "year": 1986,
+    "aliases": [
+     "Ferris Bueller"
+    ]
+   },
+   {
+    "answer": "Casablanca",
+    "year": 1942
+   },
+   {
+    "answer": "Avengers: Endgame",
+    "year": 2019,
+    "aliases": [
+     "Endgame"
+    ]
+   },
+   {
+    "answer": "Groundhog Day",
+    "year": 1993
+   },
+   {
+    "answer": "Kill Bill: Vol. 1",
+    "year": 2003,
+    "aliases": [
+     "Kill Bill",
+     "Kill Bill Volume 1"
+    ]
+   },
+   {
+    "answer": "Avatar",
+    "year": 2009
+   },
+   {
+    "answer": "Black Panther",
+    "year": 2018
+   },
+   {
+    "answer": "Spider-Man: Into the Spider-Verse",
+    "year": 2018,
+    "aliases": [
+     "Into the Spider-Verse",
+     "Spider-Verse"
+    ]
+   },
+   {
+    "answer": "Princess Mononoke",
+    "year": 1997
    }
   ]
  },
  "shows": {
   "pool": [
-   "The Sopranos",
-   "Fargo",
-   "True Detective",
-   "Westworld",
-   "Euphoria",
-   "House",
-   "Grey's Anatomy",
-   "The Big Bang Theory",
-   "How I Met Your Mother",
-   "Sherlock",
-   "Doctor Who",
-   "Narcos",
-   "Ozark",
-   "Mindhunter",
-   "Black Mirror",
-   "The X-Files",
-   "Cowboy Bebop",
-   "Death Note",
-   "One Piece",
-   "Rick and Morty"
+   "The Office (UK)",
+   "Better Things",
+   "Boardwalk Empire",
+   "Deadwood",
+   "Six Feet Under",
+   "The Leftovers",
+   "Battlestar Galactica",
+   "Star Trek: The Next Generation",
+   "Firefly",
+   "Hannibal",
+   "Mr. Robot",
+   "Halt and Catch Fire",
+   "The Americans",
+   "Justified",
+   "Fringe",
+   "Heroes",
+   "Smallville",
+   "Daredevil",
+   "Loki",
+   "WandaVision",
+   "The Rings of Power",
+   "Cobra Kai",
+   "Ginny & Georgia",
+   "Emily in Paris",
+   "Outer Banks",
+   "Sex Education",
+   "The Umbrella Academy",
+   "Peacemaker",
+   "Hunter x Hunter",
+   "Bleach",
+   "My Hero Academia",
+   "Neon Genesis Evangelion",
+   "Steins;Gate",
+   "Spy x Family",
+   "Mob Psycho 100",
+   "Archer",
+   "King of the Hill",
+   "Bob's Burgers",
+   "American Dad!"
   ],
   "puzzles": [
    {
-    "answer": "Breaking Bad",
-    "year": 2008
+    "answer": "Fallout",
+    "year": 2024
+   },
+   {
+    "answer": "Shogun",
+    "year": 2024,
+    "aliases": [
+     "Shōgun"
+    ]
+   },
+   {
+    "answer": "House",
+    "year": 2004,
+    "aliases": [
+     "House MD",
+     "House M.D."
+    ]
+   },
+   {
+    "answer": "Severance",
+    "year": 2022
+   },
+   {
+    "answer": "Westworld",
+    "year": 2016
+   },
+   {
+    "answer": "Mindhunter",
+    "year": 2017
+   },
+   {
+    "answer": "Mad Men",
+    "year": 2007
+   },
+   {
+    "answer": "Naruto",
+    "year": 2002
+   },
+   {
+    "answer": "Frieren: Beyond Journey's End",
+    "year": 2023,
+    "aliases": [
+     "Frieren"
+    ]
+   },
+   {
+    "answer": "Supernatural",
+    "year": 2005
+   },
+   {
+    "answer": "Cowboy Bebop",
+    "year": 1998
    },
    {
     "answer": "The Office",
@@ -221,125 +669,24 @@
     ]
    },
    {
-    "answer": "Stranger Things",
-    "year": 2016
-   },
-   {
-    "answer": "Game of Thrones",
-    "year": 2011,
-    "aliases": [
-     "GOT"
-    ]
-   },
-   {
-    "answer": "Friends",
-    "year": 1994
-   },
-   {
-    "answer": "The Sopranos",
-    "year": 1999
-   },
-   {
-    "answer": "Seinfeld",
-    "year": 1989
-   },
-   {
-    "answer": "The Simpsons",
-    "year": 1989
-   },
-   {
-    "answer": "Better Call Saul",
-    "year": 2015
-   },
-   {
-    "answer": "The Last of Us",
-    "year": 2023
-   },
-   {
-    "answer": "Succession",
-    "year": 2018
-   },
-   {
-    "answer": "The Bear",
-    "year": 2022
-   },
-   {
-    "answer": "Severance",
-    "year": 2022
+    "answer": "Death Note",
+    "year": 2006
    },
    {
     "answer": "The Mandalorian",
     "year": 2019
    },
    {
-    "answer": "Mad Men",
-    "year": 2007
-   },
-   {
-    "answer": "The Wire",
-    "year": 2002
-   },
-   {
-    "answer": "Lost",
-    "year": 2004
-   },
-   {
     "answer": "Squid Game",
     "year": 2021
    },
    {
-    "answer": "Ted Lasso",
-    "year": 2020
+    "answer": "Gilmore Girls",
+    "year": 2000
    },
    {
-    "answer": "Arcane",
-    "year": 2021
-   },
-   {
-    "answer": "Avatar: The Last Airbender",
-    "year": 2005,
-    "aliases": [
-     "ATLA",
-     "Avatar"
-    ]
-   },
-   {
-    "answer": "Parks and Recreation",
-    "year": 2009,
-    "aliases": [
-     "Parks and Rec"
-    ]
-   },
-   {
-    "answer": "The Crown",
-    "year": 2016
-   },
-   {
-    "answer": "Wednesday",
-    "year": 2022
-   },
-   {
-    "answer": "Fleabag",
-    "year": 2016
-   },
-   {
-    "answer": "Twin Peaks",
-    "year": 1990
-   },
-   {
-    "answer": "The Boys",
+    "answer": "Chernobyl",
     "year": 2019
-   },
-   {
-    "answer": "Peaky Blinders",
-    "year": 2013
-   },
-   {
-    "answer": "Attack on Titan",
-    "year": 2013,
-    "aliases": [
-     "Shingeki no Kyojin"
-    ]
    },
    {
     "answer": "Brooklyn Nine-Nine",
@@ -350,27 +697,409 @@
     ]
    },
    {
-    "answer": "Shogun",
-    "year": 2024,
+    "answer": "The Witcher",
+    "year": 2019,
     "aliases": [
-     "Shōgun"
+     "Witcher"
     ]
    },
    {
-    "answer": "Chernobyl",
-    "year": 2019
+    "answer": "Bridgerton",
+    "year": 2020
    },
    {
-    "answer": "Dexter",
-    "year": 2006
+    "answer": "Succession",
+    "year": 2018
+   },
+   {
+    "answer": "BoJack Horseman",
+    "year": 2014,
+    "aliases": [
+     "Bojack"
+    ]
+   },
+   {
+    "answer": "Ozark",
+    "year": 2017
    },
    {
     "answer": "House of the Dragon",
     "year": 2022
    },
    {
+    "answer": "The Sopranos",
+    "year": 1999
+   },
+   {
+    "answer": "Grey's Anatomy",
+    "year": 2005,
+    "aliases": [
+     "Greys Anatomy"
+    ]
+   },
+   {
+    "answer": "Fullmetal Alchemist: Brotherhood",
+    "year": 2009,
+    "aliases": [
+     "Fullmetal Alchemist",
+     "FMA Brotherhood",
+     "FMAB"
+    ]
+   },
+   {
+    "answer": "Arrested Development",
+    "year": 2003
+   },
+   {
+    "answer": "Attack on Titan",
+    "year": 2013,
+    "aliases": [
+     "Shingeki no Kyojin"
+    ]
+   },
+   {
+    "answer": "The Good Place",
+    "year": 2016,
+    "aliases": [
+     "Good Place"
+    ]
+   },
+   {
+    "answer": "Avatar: The Last Airbender",
+    "year": 2005,
+    "aliases": [
+     "ATLA",
+     "Avatar"
+    ]
+   },
+   {
+    "answer": "True Detective",
+    "year": 2014
+   },
+   {
+    "answer": "Band of Brothers",
+    "year": 2001
+   },
+   {
+    "answer": "Demon Slayer: Kimetsu no Yaiba",
+    "year": 2019,
+    "aliases": [
+     "Demon Slayer",
+     "Kimetsu no Yaiba"
+    ]
+   },
+   {
+    "answer": "Stranger Things",
+    "year": 2016
+   },
+   {
+    "answer": "Schitt's Creek",
+    "year": 2015,
+    "aliases": [
+     "Schitts Creek"
+    ]
+   },
+   {
+    "answer": "The Wire",
+    "year": 2002
+   },
+   {
+    "answer": "Dexter",
+    "year": 2006
+   },
+   {
+    "answer": "Family Guy",
+    "year": 1999
+   },
+   {
+    "answer": "The Boys",
+    "year": 2019
+   },
+   {
+    "answer": "Andor",
+    "year": 2022
+   },
+   {
+    "answer": "Downton Abbey",
+    "year": 2010
+   },
+   {
+    "answer": "Game of Thrones",
+    "year": 2011,
+    "aliases": [
+     "GOT"
+    ]
+   },
+   {
+    "answer": "Money Heist",
+    "year": 2017,
+    "aliases": [
+     "La Casa de Papel"
+    ]
+   },
+   {
+    "answer": "Community",
+    "year": 2009
+   },
+   {
+    "answer": "Friends",
+    "year": 1994
+   },
+   {
+    "answer": "The X-Files",
+    "year": 1993,
+    "aliases": [
+     "X-Files"
+    ]
+   },
+   {
+    "answer": "The Simpsons",
+    "year": 1989
+   },
+   {
+    "answer": "Fleabag",
+    "year": 2016
+   },
+   {
+    "answer": "The Big Bang Theory",
+    "year": 2007,
+    "aliases": [
+     "Big Bang Theory"
+    ]
+   },
+   {
+    "answer": "The Bear",
+    "year": 2022
+   },
+   {
+    "answer": "Vikings",
+    "year": 2013
+   },
+   {
+    "answer": "Invincible",
+    "year": 2021
+   },
+   {
+    "answer": "Black Mirror",
+    "year": 2011
+   },
+   {
+    "answer": "Ted Lasso",
+    "year": 2020
+   },
+   {
+    "answer": "Jujutsu Kaisen",
+    "year": 2020,
+    "aliases": [
+     "JJK"
+    ]
+   },
+   {
+    "answer": "South Park",
+    "year": 1997
+   },
+   {
+    "answer": "Wednesday",
+    "year": 2022
+   },
+   {
+    "answer": "Prison Break",
+    "year": 2005
+   },
+   {
+    "answer": "Parks and Recreation",
+    "year": 2009,
+    "aliases": [
+     "Parks and Rec"
+    ]
+   },
+   {
     "answer": "The Walking Dead",
     "year": 2010
+   },
+   {
+    "answer": "Bluey",
+    "year": 2018
+   },
+   {
+    "answer": "Twin Peaks",
+    "year": 1990
+   },
+   {
+    "answer": "Curb Your Enthusiasm",
+    "year": 2000,
+    "aliases": [
+     "Curb"
+    ]
+   },
+   {
+    "answer": "Seinfeld",
+    "year": 1989
+   },
+   {
+    "answer": "The Crown",
+    "year": 2016
+   },
+   {
+    "answer": "One Piece",
+    "year": 1999
+   },
+   {
+    "answer": "What We Do in the Shadows",
+    "year": 2019
+   },
+   {
+    "answer": "It's Always Sunny in Philadelphia",
+    "year": 2005,
+    "aliases": [
+     "Always Sunny",
+     "Its Always Sunny"
+    ]
+   },
+   {
+    "answer": "Lost",
+    "year": 2004
+   },
+   {
+    "answer": "Adventure Time",
+    "year": 2010
+   },
+   {
+    "answer": "SpongeBob SquarePants",
+    "year": 1999,
+    "aliases": [
+     "SpongeBob"
+    ]
+   },
+   {
+    "answer": "Sherlock",
+    "year": 2010
+   },
+   {
+    "answer": "Breaking Bad",
+    "year": 2008
+   },
+   {
+    "answer": "The Penguin",
+    "year": 2024,
+    "aliases": [
+     "Penguin"
+    ]
+   },
+   {
+    "answer": "Narcos",
+    "year": 2015
+   },
+   {
+    "answer": "Modern Family",
+    "year": 2009
+   },
+   {
+    "answer": "The White Lotus",
+    "year": 2021,
+    "aliases": [
+     "White Lotus"
+    ]
+   },
+   {
+    "answer": "Sons of Anarchy",
+    "year": 2008
+   },
+   {
+    "answer": "Doctor Who",
+    "year": 2005
+   },
+   {
+    "answer": "How I Met Your Mother",
+    "year": 2005,
+    "aliases": [
+     "HIMYM"
+    ]
+   },
+   {
+    "answer": "Silicon Valley",
+    "year": 2014
+   },
+   {
+    "answer": "Barry",
+    "year": 2018
+   },
+   {
+    "answer": "Dragon Ball Z",
+    "year": 1989,
+    "aliases": [
+     "DBZ"
+    ]
+   },
+   {
+    "answer": "Peaky Blinders",
+    "year": 2013
+   },
+   {
+    "answer": "Abbott Elementary",
+    "year": 2021
+   },
+   {
+    "answer": "Futurama",
+    "year": 1999
+   },
+   {
+    "answer": "Arcane",
+    "year": 2021
+   },
+   {
+    "answer": "Rick and Morty",
+    "year": 2013
+   },
+   {
+    "answer": "The Handmaid's Tale",
+    "year": 2017,
+    "aliases": [
+     "Handmaids Tale"
+    ]
+   },
+   {
+    "answer": "The Last of Us",
+    "year": 2023
+   },
+   {
+    "answer": "Dark",
+    "year": 2017
+   },
+   {
+    "answer": "Fargo",
+    "year": 2014
+   },
+   {
+    "answer": "Yellowstone",
+    "year": 2018
+   },
+   {
+    "answer": "Better Call Saul",
+    "year": 2015
+   },
+   {
+    "answer": "Buffy the Vampire Slayer",
+    "year": 1997,
+    "aliases": [
+     "Buffy"
+    ]
+   },
+   {
+    "answer": "Euphoria",
+    "year": 2019
+   },
+   {
+    "answer": "30 Rock",
+    "year": 2006
+   },
+   {
+    "answer": "Veep",
+    "year": 2012
+   },
+   {
+    "answer": "Gravity Falls",
+    "year": 2012
    }
   ]
  },
@@ -379,7 +1108,6 @@
    "Call of Duty: Modern Warfare",
    "Super Mario 64",
    "Ocarina of Time",
-   "Death Stranding",
    "Final Fantasy VII",
    "Metal Gear Solid",
    "Uncharted 2",
@@ -401,103 +1129,14 @@
   ],
   "puzzles": [
    {
-    "answer": "The Elder Scrolls V: Skyrim",
-    "year": 2011,
-    "aliases": [
-     "Skyrim"
-    ],
-    "steam": 489830
-   },
-   {
-    "answer": "Elden Ring",
-    "year": 2022,
-    "steam": 1245620
-   },
-   {
-    "answer": "Terraria",
-    "year": 2011,
-    "steam": 105600
-   },
-   {
-    "answer": "Red Dead Redemption 2",
-    "year": 2018,
-    "aliases": [
-     "RDR2"
-    ],
-    "steam": 1174180
-   },
-   {
-    "answer": "The Last of Us Part I",
-    "year": 2013,
-    "aliases": [
-     "The Last of Us"
-    ],
-    "steam": 1888930
-   },
-   {
-    "answer": "Cuphead",
-    "year": 2017,
-    "steam": 268910
-   },
-   {
-    "answer": "Grand Theft Auto V",
-    "year": 2013,
-    "aliases": [
-     "GTA 5",
-     "GTA V"
-    ],
-    "steam": 271590
-   },
-   {
-    "answer": "Hollow Knight",
-    "year": 2017,
-    "steam": 367520
-   },
-   {
-    "answer": "God of War",
-    "year": 2018,
-    "steam": 1593500
-   },
-   {
-    "answer": "Portal 2",
-    "year": 2011,
-    "steam": 620
-   },
-   {
-    "answer": "Celeste",
-    "year": 2018,
-    "steam": 504230
-   },
-   {
-    "answer": "Halo: Combat Evolved",
-    "year": 2001,
-    "aliases": [
-     "Halo"
-    ],
-    "steam": 976730
-   },
-   {
-    "answer": "The Witcher 3: Wild Hunt",
-    "year": 2015,
-    "aliases": [
-     "Witcher 3"
-    ],
-    "steam": 292030
-   },
-   {
-    "answer": "Hades",
-    "year": 2020,
-    "steam": 1145360
-   },
-   {
-    "answer": "Stardew Valley",
-    "year": 2016,
-    "steam": 413150
-   },
-   {
     "answer": "Cyberpunk 2077",
     "year": 2020,
     "steam": 1091500
+   },
+   {
+    "answer": "Mass Effect 2",
+    "year": 2010,
+    "steam": 1328670
    },
    {
     "answer": "DOOM",
@@ -508,56 +1147,159 @@
     "steam": 379720
    },
    {
+    "answer": "Apex Legends",
+    "year": 2019,
+    "aliases": [
+     "Apex"
+    ],
+    "steam": 1172470
+   },
+   {
+    "answer": "Left 4 Dead 2",
+    "year": 2009,
+    "aliases": [
+     "L4D2"
+    ],
+    "steam": 550
+   },
+   {
+    "answer": "Cuphead",
+    "year": 2017,
+    "steam": 268910
+   },
+   {
+    "answer": "God of War",
+    "year": 2018,
+    "steam": 1593500
+   },
+   {
+    "answer": "Resident Evil Village",
+    "year": 2021,
+    "aliases": [
+     "RE Village",
+     "Resident Evil 8"
+    ],
+    "steam": 1196590
+   },
+   {
+    "answer": "Titanfall 2",
+    "year": 2016,
+    "steam": 1237970
+   },
+   {
+    "answer": "Starfield",
+    "year": 2023,
+    "steam": 1716740
+   },
+   {
+    "answer": "Balatro",
+    "year": 2024,
+    "steam": 2379780
+   },
+   {
+    "answer": "Star Wars Jedi: Fallen Order",
+    "year": 2019,
+    "aliases": [
+     "Jedi Fallen Order",
+     "Fallen Order"
+    ],
+    "steam": 1172380
+   },
+   {
+    "answer": "Slay the Spire",
+    "year": 2019,
+    "steam": 646570
+   },
+   {
+    "answer": "Sekiro: Shadows Die Twice",
+    "year": 2019,
+    "aliases": [
+     "Sekiro"
+    ],
+    "steam": 814380
+   },
+   {
+    "answer": "L.A. Noire",
+    "year": 2011,
+    "aliases": [
+     "LA Noire"
+    ],
+    "steam": 110800
+   },
+   {
+    "answer": "Sid Meier's Civilization VI",
+    "year": 2016,
+    "aliases": [
+     "Civilization VI",
+     "Civ 6"
+    ],
+    "steam": 289070
+   },
+   {
     "answer": "Among Us",
     "year": 2018,
     "steam": 945360
    },
    {
-    "answer": "Baldur's Gate 3",
-    "year": 2023,
-    "aliases": [
-     "BG3"
-    ],
-    "steam": 1086940
-   },
-   {
-    "answer": "Ghost of Tsushima",
-    "year": 2020,
-    "steam": 2215430
-   },
-   {
-    "answer": "Disco Elysium",
-    "year": 2019,
-    "steam": 632470
-   },
-   {
-    "answer": "Fallout 4",
+    "answer": "Yakuza 0",
     "year": 2015,
-    "steam": 377160
+    "steam": 638970
    },
    {
-    "answer": "Persona 5 Royal",
+    "answer": "Half-Life",
+    "year": 1998,
+    "steam": 70
+   },
+   {
+    "answer": "NieR:Automata",
+    "year": 2017,
+    "aliases": [
+     "Nier Automata"
+    ],
+    "steam": 524220
+   },
+   {
+    "answer": "Hades",
+    "year": 2020,
+    "steam": 1145360
+   },
+   {
+    "answer": "Final Fantasy VII Remake",
     "year": 2020,
     "aliases": [
-     "Persona 5",
-     "P5R"
+     "FF7 Remake",
+     "FFVII Remake"
     ],
-    "steam": 1687950
+    "steam": 1462040
    },
    {
-    "answer": "Overwatch",
-    "year": 2016,
-    "steam": 2357570
+    "answer": "Garry's Mod",
+    "year": 2006,
+    "aliases": [
+     "Gmod"
+    ],
+    "steam": 4000
    },
    {
-    "answer": "BioShock",
-    "year": 2007,
-    "steam": 409710
+    "answer": "Deep Rock Galactic",
+    "year": 2020,
+    "aliases": [
+     "DRG"
+    ],
+    "steam": 548430
    },
    {
-    "answer": "Half-Life 2",
-    "year": 2004,
-    "steam": 220
+    "answer": "Helldivers 2",
+    "year": 2024,
+    "steam": 553850
+   },
+   {
+    "answer": "Resident Evil 2",
+    "year": 2019,
+    "aliases": [
+     "RE2"
+    ],
+    "steam": 883710
    },
    {
     "answer": "Dark Souls III",
@@ -569,22 +1311,56 @@
     "steam": 374320
    },
    {
-    "answer": "Undertale",
-    "year": 2015,
-    "steam": 391540
+    "answer": "Portal",
+    "year": 2007,
+    "steam": 400
    },
    {
-    "answer": "Mass Effect 2",
-    "year": 2010,
-    "steam": 1328670
-   },
-   {
-    "answer": "Sekiro: Shadows Die Twice",
-    "year": 2019,
+    "answer": "Grand Theft Auto: San Andreas",
+    "year": 2004,
     "aliases": [
-     "Sekiro"
+     "San Andreas",
+     "GTA San Andreas"
     ],
-    "steam": 814380
+    "steam": 12120
+   },
+   {
+    "answer": "Hogwarts Legacy",
+    "year": 2023,
+    "steam": 990080
+   },
+   {
+    "answer": "Fallout 4",
+    "year": 2015,
+    "steam": 377160
+   },
+   {
+    "answer": "Celeste",
+    "year": 2018,
+    "steam": 504230
+   },
+   {
+    "answer": "Batman: Arkham Knight",
+    "year": 2015,
+    "aliases": [
+     "Arkham Knight"
+    ],
+    "steam": 208650
+   },
+   {
+    "answer": "Dishonored",
+    "year": 2012,
+    "steam": 205100
+   },
+   {
+    "answer": "Dead Cells",
+    "year": 2018,
+    "steam": 588650
+   },
+   {
+    "answer": "Days Gone",
+    "year": 2019,
+    "steam": 1259420
    },
    {
     "answer": "Marvel's Spider-Man",
@@ -595,6 +1371,50 @@
     "steam": 1817070
    },
    {
+    "answer": "Monster Hunter: World",
+    "year": 2018,
+    "aliases": [
+     "MHW"
+    ],
+    "steam": 582010
+   },
+   {
+    "answer": "Undertale",
+    "year": 2015,
+    "steam": 391540
+   },
+   {
+    "answer": "Portal 2",
+    "year": 2011,
+    "steam": 620
+   },
+   {
+    "answer": "Inside",
+    "year": 2016,
+    "steam": 304430
+   },
+   {
+    "answer": "Devil May Cry 5",
+    "year": 2019,
+    "aliases": [
+     "DMC5"
+    ],
+    "steam": 601150
+   },
+   {
+    "answer": "Outer Wilds",
+    "year": 2019,
+    "steam": 753640
+   },
+   {
+    "answer": "The Witcher 3: Wild Hunt",
+    "year": 2015,
+    "aliases": [
+     "Witcher 3"
+    ],
+    "steam": 292030
+   },
+   {
     "answer": "Resident Evil 4",
     "year": 2005,
     "aliases": [
@@ -603,9 +1423,44 @@
     "steam": 254700
    },
    {
-    "answer": "It Takes Two",
-    "year": 2021,
-    "steam": 1426210
+    "answer": "Phasmophobia",
+    "year": 2020,
+    "steam": 739630
+   },
+   {
+    "answer": "Disco Elysium",
+    "year": 2019,
+    "steam": 632470
+   },
+   {
+    "answer": "Death Stranding",
+    "year": 2019,
+    "steam": 1850570
+   },
+   {
+    "answer": "Max Payne 3",
+    "year": 2012,
+    "steam": 204100
+   },
+   {
+    "answer": "Half-Life 2",
+    "year": 2004,
+    "steam": 220
+   },
+   {
+    "answer": "Lethal Company",
+    "year": 2023,
+    "steam": 1966720
+   },
+   {
+    "answer": "Tekken 8",
+    "year": 2024,
+    "steam": 1778820
+   },
+   {
+    "answer": "Terraria",
+    "year": 2011,
+    "steam": 105600
    },
    {
     "answer": "Subnautica",
@@ -613,9 +1468,306 @@
     "steam": 264710
    },
    {
-    "answer": "Outer Wilds",
+    "answer": "Red Dead Redemption 2",
+    "year": 2018,
+    "aliases": [
+     "RDR2"
+    ],
+    "steam": 1174180
+   },
+   {
+    "answer": "Lies of P",
+    "year": 2023,
+    "steam": 1627720
+   },
+   {
+    "answer": "Batman: Arkham City",
+    "year": 2011,
+    "aliases": [
+     "Arkham City"
+    ],
+    "steam": 200260
+   },
+   {
+    "answer": "Overwatch",
+    "year": 2016,
+    "steam": 2357570
+   },
+   {
+    "answer": "Ori and the Will of the Wisps",
+    "year": 2020,
+    "steam": 1057090
+   },
+   {
+    "answer": "Grand Theft Auto V",
+    "year": 2013,
+    "aliases": [
+     "GTA 5",
+     "GTA V"
+    ],
+    "steam": 271590
+   },
+   {
+    "answer": "Mortal Kombat 11",
     "year": 2019,
-    "steam": 753640
+    "aliases": [
+     "MK11"
+    ],
+    "steam": 976310
+   },
+   {
+    "answer": "It Takes Two",
+    "year": 2021,
+    "steam": 1426210
+   },
+   {
+    "answer": "Forza Horizon 5",
+    "year": 2021,
+    "aliases": [
+     "FH5"
+    ],
+    "steam": 1551360
+   },
+   {
+    "answer": "Borderlands 2",
+    "year": 2012,
+    "steam": 49520
+   },
+   {
+    "answer": "Uncharted 4: A Thief's End",
+    "year": 2016,
+    "aliases": [
+     "Uncharted 4",
+     "Uncharted"
+    ],
+    "steam": 1659420
+   },
+   {
+    "answer": "Persona 5 Royal",
+    "year": 2020,
+    "aliases": [
+     "Persona 5",
+     "P5R"
+    ],
+    "steam": 1687950
+   },
+   {
+    "answer": "Ghost of Tsushima",
+    "year": 2020,
+    "steam": 2215430
+   },
+   {
+    "answer": "Street Fighter 6",
+    "year": 2023,
+    "aliases": [
+     "SF6"
+    ],
+    "steam": 1364780
+   },
+   {
+    "answer": "Control",
+    "year": 2019,
+    "steam": 870780
+   },
+   {
+    "answer": "Detroit: Become Human",
+    "year": 2018,
+    "aliases": [
+     "Detroit"
+    ],
+    "steam": 1222140
+   },
+   {
+    "answer": "Assassin's Creed II",
+    "year": 2009,
+    "aliases": [
+     "Assassin's Creed 2"
+    ],
+    "steam": 33230
+   },
+   {
+    "answer": "Counter-Strike 2",
+    "year": 2023,
+    "aliases": [
+     "CS2",
+     "Counter-Strike",
+     "CS:GO"
+    ],
+    "steam": 730
+   },
+   {
+    "answer": "Baldur's Gate 3",
+    "year": 2023,
+    "aliases": [
+     "BG3"
+    ],
+    "steam": 1086940
+   },
+   {
+    "answer": "Cities: Skylines",
+    "year": 2015,
+    "steam": 255710
+   },
+   {
+    "answer": "Dark Souls Remastered",
+    "year": 2018,
+    "aliases": [
+     "Dark Souls"
+    ],
+    "steam": 570940
+   },
+   {
+    "answer": "Vampire Survivors",
+    "year": 2022,
+    "steam": 1794680
+   },
+   {
+    "answer": "Tomb Raider",
+    "year": 2013,
+    "steam": 203160
+   },
+   {
+    "answer": "The Elder Scrolls V: Skyrim",
+    "year": 2011,
+    "aliases": [
+     "Skyrim"
+    ],
+    "steam": 489830
+   },
+   {
+    "answer": "Black Myth: Wukong",
+    "year": 2024,
+    "aliases": [
+     "Wukong"
+    ],
+    "steam": 2358720
+   },
+   {
+    "answer": "BioShock",
+    "year": 2007,
+    "steam": 409710
+   },
+   {
+    "answer": "Valheim",
+    "year": 2021,
+    "steam": 892970
+   },
+   {
+    "answer": "Assassin's Creed IV: Black Flag",
+    "year": 2013,
+    "aliases": [
+     "Black Flag",
+     "AC4"
+    ],
+    "steam": 242050
+   },
+   {
+    "answer": "Factorio",
+    "year": 2020,
+    "steam": 427520
+   },
+   {
+    "answer": "Ori and the Blind Forest",
+    "year": 2015,
+    "steam": 387290
+   },
+   {
+    "answer": "The Binding of Isaac: Rebirth",
+    "year": 2014,
+    "aliases": [
+     "Binding of Isaac"
+    ],
+    "steam": 250900
+   },
+   {
+    "answer": "RimWorld",
+    "year": 2018,
+    "steam": 294100
+   },
+   {
+    "answer": "Far Cry 3",
+    "year": 2012,
+    "steam": 220240
+   },
+   {
+    "answer": "Sea of Thieves",
+    "year": 2020,
+    "steam": 1172620
+   },
+   {
+    "answer": "Limbo",
+    "year": 2010,
+    "steam": 48000
+   },
+   {
+    "answer": "Palworld",
+    "year": 2024,
+    "steam": 1623730
+   },
+   {
+    "answer": "Hollow Knight",
+    "year": 2017,
+    "steam": 367520
+   },
+   {
+    "answer": "Stardew Valley",
+    "year": 2016,
+    "steam": 413150
+   },
+   {
+    "answer": "Team Fortress 2",
+    "year": 2007,
+    "aliases": [
+     "TF2"
+    ],
+    "steam": 440
+   },
+   {
+    "answer": "Elden Ring",
+    "year": 2022,
+    "steam": 1245620
+   },
+   {
+    "answer": "Fallout: New Vegas",
+    "year": 2010,
+    "aliases": [
+     "New Vegas"
+    ],
+    "steam": 22380
+   },
+   {
+    "answer": "Horizon Zero Dawn",
+    "year": 2017,
+    "steam": 1151640
+   },
+   {
+    "answer": "Halo Infinite",
+    "year": 2021,
+    "steam": 1240440
+   },
+   {
+    "answer": "Halo: Combat Evolved",
+    "year": 2001,
+    "aliases": [
+     "Halo"
+    ],
+    "steam": 976730
+   },
+   {
+    "answer": "Dota 2",
+    "year": 2013,
+    "aliases": [
+     "Dota"
+    ],
+    "steam": 570
+   },
+   {
+    "answer": "The Last of Us Part I",
+    "year": 2013,
+    "aliases": [
+     "The Last of Us"
+    ],
+    "steam": 1888930
    }
   ]
  }
