@@ -1,21 +1,20 @@
 // Build step: resolve 6 frames for every puzzle and write data/frames.json.
-// Movies & shows come from TMDB, games from RAWG. Images are linked, not copied.
+// Movies & shows come from TMDB, games from the Steam store. Images are linked, not copied.
 //
 // Needs env vars (set them in Netlify → Project configuration → Environment variables):
 //   TMDB_TOKEN  – TMDB "API Read Access Token" (or TMDB_KEY – the shorter v3 API key)
-//   RAWG_KEY    – RAWG API key
-// Missing keys never fail the build; those puzzles just keep their placeholders.
+// Games need no key. A missing TMDB key never fails the build; those puzzles keep placeholders.
 //
 // Per-puzzle overrides in data/puzzles.json:
 //   "tmdb": 603        exact TMDB id if the title search picks the wrong thing
-//   "rawg": "elden-ring"   exact RAWG id or slug
+//   "steam": 1245620   exact Steam app id
 //   "frames": [...]    hand-picked image paths/URLs (skips lookup entirely)
 
 import { readFile, writeFile } from "node:fs/promises";
 
 const root = new URL("..", import.meta.url);
 const data = JSON.parse(await readFile(new URL("data/puzzles.json", root), "utf8"));
-const { TMDB_TOKEN, TMDB_KEY, RAWG_KEY } = process.env;
+const { TMDB_TOKEN, TMDB_KEY } = process.env;
 const IMG = "https://image.tmdb.org/t/p/w1280";
 const out = { movies: {}, shows: {}, games: {} };
 const problems = [];
@@ -96,35 +95,38 @@ async function showFrames(p) {
   return { id, frames: frames.slice(0, 6) };
 }
 
-/* ---------------- RAWG (games) ---------------- */
-const rawg = (path, params = {}) =>
-  getJSON(`https://api.rawg.io/api${path}?${new URLSearchParams({ key: RAWG_KEY, ...params })}`);
+/* ---------------- Steam (games, no key needed) ---------------- */
+const steamApi = (path, params) =>
+  getJSON(`https://store.steampowered.com/api/${path}?${new URLSearchParams({ l: "english", cc: "US", ...params })}`);
+
+async function steamDetails(appid) {
+  const r = await steamApi("appdetails", { appids: String(appid) });
+  const entry = r[appid];
+  return entry && entry.success ? entry.data : null;
+}
 
 async function gameFrames(p) {
-  let id = p.rawg;
-  if (!id) {
-    const r = await rawg("/games", { search: p.answer, search_precise: "true", page_size: "10" });
-    if (!r.results.length) throw new Error("no RAWG match");
-    const year = (g) => (g.released ? +g.released.slice(0, 4) : 0);
-    const best = r.results.find((g) => norm(g.name) === norm(p.answer) && (!p.year || Math.abs(year(g) - p.year) <= 1))
-      || r.results.find((g) => norm(g.name) === norm(p.answer))
-      || r.results.find((g) => !p.year || Math.abs(year(g) - p.year) <= 1)
-      || r.results[0];
-    id = best.slug;
+  let data = p.steam ? await steamDetails(p.steam) : null;
+  // A pinned id that disappeared or points at a different game → fall back to search.
+  if (!data || (!norm(data.name).includes(norm(p.answer).split("-")[0]))) {
+    const r = await steamApi("storesearch/", { term: p.answer });
+    const items = r.items || [];
+    if (!items.length) throw new Error("no Steam match");
+    const best = items.find((g) => norm(g.name) === norm(p.answer)) || items[0];
+    data = await steamDetails(best.id);
+    if (!data) throw new Error("Steam details unavailable");
   }
-  const [shots, game] = await Promise.all([rawg(`/games/${id}/screenshots`, { page_size: "20" }), rawg(`/games/${id}`)]);
-  // Screenshots first (harder), then the main art (easiest).
-  const urls = shots.results.filter((s) => !s.is_deleted).map((s) => s.image);
-  const frames = pickSix(urls).slice(0, game.background_image ? 5 : 6);
-  if (game.background_image && !frames.includes(game.background_image)) frames.push(game.background_image);
-  return { id, frames: frames.slice(0, 6) };
+  // Developers list their most iconic screenshot first, so reverse for hardest → easiest.
+  const shots = (data.screenshots || []).map((s) => s.path_full);
+  const frames = pickSix(shots).reverse();
+  return { id: `${data.steam_appid} ${data.name}`, frames };
 }
 
 /* ---------------- Run ---------------- */
 const jobs = [
   ["movies", movieFrames, TMDB_TOKEN || TMDB_KEY, "TMDB_TOKEN"],
   ["shows", showFrames, TMDB_TOKEN || TMDB_KEY, "TMDB_TOKEN"],
-  ["games", gameFrames, RAWG_KEY, "RAWG_KEY"],
+  ["games", gameFrames, true, ""],
 ];
 
 for (const [cat, fn, haveKey, keyName] of jobs) {

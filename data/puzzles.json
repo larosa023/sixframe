@@ -376,61 +376,68 @@
  },
  "games": {
   "pool": [
-   "Dark Souls",
-   "Skyrim",
-   "Fallout 4",
    "Call of Duty: Modern Warfare",
    "Super Mario 64",
    "Ocarina of Time",
-   "Doom",
    "Death Stranding",
    "Final Fantasy VII",
-   "Persona 5",
    "Metal Gear Solid",
    "Uncharted 2",
    "Rocket League",
    "League of Legends",
    "Valorant",
-   "Terraria",
-   "Cuphead",
-   "Disco Elysium",
    "Sonic the Hedgehog",
-   "Pac-Man"
+   "Pac-Man",
+   "The Legend of Zelda: Breath of the Wild",
+   "Minecraft",
+   "Super Mario Odyssey",
+   "Fortnite",
+   "Bloodborne",
+   "Super Smash Bros. Ultimate",
+   "Animal Crossing: New Horizons",
+   "Shadow of the Colossus",
+   "Tetris",
+   "Pokémon Red and Blue"
   ],
   "puzzles": [
    {
-    "answer": "The Legend of Zelda: Breath of the Wild",
-    "year": 2017,
+    "answer": "The Elder Scrolls V: Skyrim",
+    "year": 2011,
     "aliases": [
-     "Breath of the Wild",
-     "BOTW"
-    ]
+     "Skyrim"
+    ],
+    "steam": 489830
    },
    {
     "answer": "Elden Ring",
-    "year": 2022
+    "year": 2022,
+    "steam": 1245620
    },
    {
-    "answer": "Minecraft",
-    "year": 2011
+    "answer": "Terraria",
+    "year": 2011,
+    "steam": 105600
    },
    {
     "answer": "Red Dead Redemption 2",
     "year": 2018,
     "aliases": [
      "RDR2"
-    ]
+    ],
+    "steam": 1174180
    },
    {
     "answer": "The Last of Us Part I",
     "year": 2013,
     "aliases": [
      "The Last of Us"
-    ]
+    ],
+    "steam": 1888930
    },
    {
-    "answer": "Super Mario Odyssey",
-    "year": 2017
+    "answer": "Cuphead",
+    "year": 2017,
+    "steam": 268910
    },
    {
     "answer": "Grand Theft Auto V",
@@ -438,147 +445,177 @@
     "aliases": [
      "GTA 5",
      "GTA V"
-    ]
+    ],
+    "steam": 271590
    },
    {
     "answer": "Hollow Knight",
-    "year": 2017
+    "year": 2017,
+    "steam": 367520
    },
    {
     "answer": "God of War",
-    "year": 2018
+    "year": 2018,
+    "steam": 1593500
    },
    {
     "answer": "Portal 2",
-    "year": 2011
+    "year": 2011,
+    "steam": 620
    },
    {
     "answer": "Celeste",
-    "year": 2018
+    "year": 2018,
+    "steam": 504230
    },
    {
     "answer": "Halo: Combat Evolved",
     "year": 2001,
     "aliases": [
      "Halo"
-    ]
+    ],
+    "steam": 976730
    },
    {
     "answer": "The Witcher 3: Wild Hunt",
     "year": 2015,
     "aliases": [
      "Witcher 3"
-    ]
+    ],
+    "steam": 292030
    },
    {
     "answer": "Hades",
-    "year": 2020
+    "year": 2020,
+    "steam": 1145360
    },
    {
     "answer": "Stardew Valley",
-    "year": 2016
+    "year": 2016,
+    "steam": 413150
    },
    {
     "answer": "Cyberpunk 2077",
-    "year": 2020
+    "year": 2020,
+    "steam": 1091500
    },
    {
-    "answer": "Fortnite",
-    "year": 2017
+    "answer": "DOOM",
+    "year": 2016,
+    "aliases": [
+     "Doom 2016"
+    ],
+    "steam": 379720
    },
    {
     "answer": "Among Us",
-    "year": 2018
+    "year": 2018,
+    "steam": 945360
    },
    {
     "answer": "Baldur's Gate 3",
     "year": 2023,
     "aliases": [
      "BG3"
-    ]
+    ],
+    "steam": 1086940
    },
    {
     "answer": "Ghost of Tsushima",
-    "year": 2020
+    "year": 2020,
+    "steam": 2215430
    },
    {
-    "answer": "Bloodborne",
-    "year": 2015
+    "answer": "Disco Elysium",
+    "year": 2019,
+    "steam": 632470
    },
    {
-    "answer": "Super Smash Bros. Ultimate",
-    "year": 2018,
-    "aliases": [
-     "Smash Ultimate"
-    ]
+    "answer": "Fallout 4",
+    "year": 2015,
+    "steam": 377160
    },
    {
-    "answer": "Animal Crossing: New Horizons",
+    "answer": "Persona 5 Royal",
     "year": 2020,
     "aliases": [
-     "Animal Crossing"
-    ]
+     "Persona 5",
+     "P5R"
+    ],
+    "steam": 1687950
    },
    {
     "answer": "Overwatch",
-    "year": 2016
+    "year": 2016,
+    "steam": 2357570
    },
    {
     "answer": "BioShock",
-    "year": 2007
+    "year": 2007,
+    "steam": 409710
    },
    {
     "answer": "Half-Life 2",
-    "year": 2004
+    "year": 2004,
+    "steam": 220
    },
    {
-    "answer": "Shadow of the Colossus",
-    "year": 2005
+    "answer": "Dark Souls III",
+    "year": 2016,
+    "aliases": [
+     "Dark Souls 3",
+     "DS3"
+    ],
+    "steam": 374320
    },
    {
     "answer": "Undertale",
-    "year": 2015
+    "year": 2015,
+    "steam": 391540
    },
    {
     "answer": "Mass Effect 2",
-    "year": 2010
+    "year": 2010,
+    "steam": 1328670
    },
    {
     "answer": "Sekiro: Shadows Die Twice",
     "year": 2019,
     "aliases": [
      "Sekiro"
-    ]
+    ],
+    "steam": 814380
    },
    {
     "answer": "Marvel's Spider-Man",
     "year": 2018,
     "aliases": [
      "Spider-Man PS4"
-    ]
+    ],
+    "steam": 1817070
    },
    {
     "answer": "Resident Evil 4",
     "year": 2005,
     "aliases": [
      "RE4"
-    ]
+    ],
+    "steam": 254700
    },
    {
-    "answer": "Tetris",
-    "year": 1984
+    "answer": "It Takes Two",
+    "year": 2021,
+    "steam": 1426210
    },
    {
-    "answer": "Pokémon Red and Blue",
-    "year": 1996,
-    "aliases": [
-     "Pokemon Red",
-     "Pokemon Blue"
-    ]
+    "answer": "Subnautica",
+    "year": 2018,
+    "steam": 264710
    },
    {
     "answer": "Outer Wilds",
-    "year": 2019
+    "year": 2019,
+    "steam": 753640
    }
   ]
  }

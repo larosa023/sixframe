@@ -28,12 +28,11 @@ Run locally: `python -m http.server` in this folder, then open http://localhost:
 
 ## Automatic frames (Netlify)
 
-On every Netlify build, `tools/fetch-frames.mjs` looks up each puzzle and links 6 images: TMDB stills for movies and shows, RAWG screenshots for games. Set these in **Netlify → Project configuration → Environment variables**, then redeploy:
+On every Netlify build, `tools/fetch-frames.mjs` looks up each puzzle and links 6 images: TMDB stills for movies and shows, Steam store screenshots for games (no key needed). Set this in **Netlify → Project configuration → Environment variables**, then redeploy:
 
 - `TMDB_TOKEN` – TMDB "API Read Access Token" (themoviedb.org → Settings → API)
-- `RAWG_KEY` – RAWG API key (rawg.io/apidocs)
 
-The deploy log lists every match. If a title resolves to the wrong thing, pin it with `"tmdb": <id>` or `"rawg": "<slug>"` on that puzzle.
+The deploy log lists every match. If a title resolves to the wrong thing, pin it with `"tmdb": <id>` or `"steam": <app id>` on that puzzle.
 
 ## Adding frames manually
 

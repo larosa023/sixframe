@@ -75,7 +75,7 @@
     const ext = puzzle.ext || DATA.ext || "jpg";
     const local = Array.from({ length: MAX_TRIES }, (_, i) => `${base}/${i + 1}.${ext}`);
     const remote = (FETCHED[cat] || {})[id] || [];
-    // Build-time frames (TMDB/RAWG) first; any gaps fall back to local files.
+    // Build-time frames (TMDB/Steam) first; any gaps fall back to local files.
     return local.map((path, i) => remote[i] || path);
   }
 
