@@ -14,9 +14,10 @@
   <header class="top">
     <a class="brand" href="#/">SIX<span>FRAME</span></a>
     <div class="clock" title="Puzzles reset at midnight Eastern Time">
-      <span class="clock-label">Next puzzles in</span>
+      <span class="clock-label">New puzzles in</span>
       <span id="countdown">--:--:--</span>
     </div>
+    <button id="helpBtn" class="icon-btn" aria-label="How to play">❔</button>
     <button id="statsBtn" class="icon-btn" aria-label="Stats">📊</button>
   </header>
 
@@ -32,6 +33,21 @@
   <dialog id="statsDlg">
     <div id="statsBody"></div>
     <form method="dialog"><button class="btn">Close</button></form>
+  </dialog>
+
+  <dialog id="helpDlg">
+    <h2>How to play</h2>
+    <p>Name the movie, TV show or video game from up to <b>6 frames</b>. There's a new puzzle in each category every day at midnight Eastern.</p>
+    <ul>
+      <li>Type a title and pick it from the list.</li>
+      <li>A wrong guess or <b>Skip</b> reveals the next frame and unlocks a <b>hint</b>.</li>
+      <li>The first frames are zoomed in. Each one gets wider and easier.</li>
+      <li>You get 6 guesses in total.</li>
+    </ul>
+    <p class="legend">🟩 Correct &nbsp; 🟨 Right franchise &nbsp; 🟥 Wrong &nbsp; ⬛ Skipped</p>
+    <p class="muted">Example: guessing <i>Toy Story 2</i> when the answer is <i>Toy Story</i> scores 🟨. It still costs a guess.</p>
+    <p class="muted">Missed a day? Every puzzle from the last 101 days is in the Archive.</p>
+    <form method="dialog"><button class="btn primary">Play</button></form>
   </dialog>
 
   <div id="toast" role="status" aria-live="polite"></div>

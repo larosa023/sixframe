@@ -77,15 +77,37 @@
     const base = `frames/${cat}/${id}`;
     const ext = puzzle.ext || DATA.ext || "jpg";
     const local = Array.from({ length: MAX_TRIES }, (_, i) => `${base}/${i + 1}.${ext}`);
-    const remote = (FETCHED[cat] || {})[id] || [];
+    const entry = (FETCHED[cat] || {})[id];
+    const remote = Array.isArray(entry) ? entry : (entry && entry.frames) || [];
     // Build-time frames (TMDB/Steam) first; any gaps fall back to local files.
     return local.map((path, i) => remote[i] || path);
   }
+
+  const metaFor = (cat, puzzle) => {
+    const entry = (FETCHED[cat] || {})[puzzle.id || slug(puzzle.answer)];
+    return entry && !Array.isArray(entry) ? entry : {};
+  };
 
   /* ---------- Guess matching ---------- */
   const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
     .replace(/&/g, "and").replace(/[^a-z0-9 ]+/g, " ").replace(/^(the|a|an) /, "").replace(/\s+/g, " ").trim();
   const isCorrect = (guess, p) => [p.answer, ...(p.aliases || [])].some((a) => norm(a) === norm(guess));
+
+  // Franchise key: title before any subtitle, minus numbers/roman numerals/"part".
+  const ROMAN = /^(i|ii|iii|iv|v|vi|vii|viii|ix|x|xi|xii|xiii|xiv|xv|xvi)$/;
+  function seriesKey(title) {
+    const head = title.split(/:| - /)[0];
+    return norm(head).split(" ").filter((w) => w && !/^\d+$/.test(w) && !ROMAN.test(w) && w !== "part").join(" ");
+  }
+  function isFranchise(cat, guess, p) {
+    const a = seriesKey(guess), b = seriesKey(p.answer);
+    if (a && b && (a === b || a.startsWith(b + " ") || b.startsWith(a + " "))) return true;
+    // Same movie collection (e.g. Alien / Aliens), when the build found one.
+    const series = metaFor(cat, p).series;
+    if (!series) return false;
+    const other = DATA[cat].puzzles.find((x) => norm(x.answer) === norm(guess));
+    return !!other && metaFor(cat, other).series === series;
+  }
 
   function titlePool(cat) {
     const set = new Set([...DATA[cat].puzzles.map((p) => p.answer), ...(DATA[cat].pool || [])]);
@@ -121,7 +143,7 @@
     t.textContent = msg; t.classList.add("show");
     clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
   }
-  const square = (m) => ({ win: "🟩", miss: "🟥", skip: "⬛" }[m]);
+  const square = (m) => ({ win: "🟩", miss: "🟥", close: "🟨", skip: "⬛" }[m]);
 
   /* ---------- Game view ---------- */
   function renderGame(cat, day) {
@@ -137,16 +159,19 @@
       <div class="puzzle-head">
         <h1>${CATS[cat].emoji} ${CATS[cat].label} #${day}</h1>
         <span class="date">${prettyDate(key)}${day === todayNum ? " · Today" : ""}</span>
-        ${day > Math.max(1, todayNum - ARCHIVE_DAYS + 1) || day < todayNum ? `<div class="nav">
-          ${day > Math.max(1, todayNum - ARCHIVE_DAYS + 1) ? `<a class="btn small" href="#/${cat}/${day - 1}">‹ Prev</a>` : ""}
-          ${day < todayNum ? `<a class="btn small" href="#/${cat}/${day + 1}">Next ›</a>` : ""}
-        </div>` : ""}
       </div>
       <div class="stage"><span class="badge" id="badge"></span><div id="frameBox"></div></div>
       <div class="frames" id="frameBtns"></div>
+      <div class="remaining" id="remaining"></div>
       <div id="controls"></div>
       <ul class="history" id="history"></ul>
-      <div id="result"></div>`;
+      <div id="hints"></div>
+      <div id="result"></div>
+      <div class="day-nav">
+        ${day > firstDay() ? `<a class="btn small" href="#/${cat}/${day - 1}" title="Previous puzzle">◀ #${day - 1}</a>` : "<span></span>"}
+        <a class="btn small" href="#/archive">Archive</a>
+        ${day < todayNum ? `<a class="btn small" href="#/${cat}/${day + 1}" title="Next puzzle">#${day + 1} ▶</a>` : "<span></span>"}
+      </div>`;
 
     const frameBox = app.querySelector("#frameBox");
     const badge = app.querySelector("#badge");
@@ -154,6 +179,9 @@
     const controls = app.querySelector("#controls");
     const history = app.querySelector("#history");
     const result = app.querySelector("#result");
+    const hintsBox = app.querySelector("#hints");
+    const remainingEl = app.querySelector("#remaining");
+    const hints = metaFor(cat, puzzle).hints || [];
 
     const unlocked = () => (st.done ? MAX_TRIES : Math.min(st.marks.length + 1, MAX_TRIES));
 
@@ -194,11 +222,29 @@
         b.onclick = () => showFrame(i);
         frameBtns.appendChild(b);
       }
+      if (!st.done) {
+        const skip = document.createElement("button");
+        skip.className = "skip-btn";
+        skip.textContent = st.marks.length === MAX_TRIES - 1 ? "Give up" : "Skip ⏩";
+        skip.onclick = () => advance("skip", "");
+        frameBtns.appendChild(skip);
+      }
+      const left = MAX_TRIES - st.marks.length;
+      remainingEl.textContent = st.done ? "" : `${left} guess${left === 1 ? "" : "es"} remaining!`;
+    }
+
+    // One hint unlocks per wrong guess or skip, like guessthe.game.
+    function drawHints() {
+      if (!hints.length) { hintsBox.innerHTML = ""; return; }
+      const shown = st.done ? hints.length : Math.min(st.marks.length, hints.length);
+      hintsBox.innerHTML = `<div class="hints"><h3>Hints</h3>${hints.map(([label, value], i) => i < shown
+        ? `<div class="hint"><span>${esc(label)}</span><b>${esc(value)}</b></div>`
+        : `<div class="hint locked"><span>${esc(label)}</span><i>Unlocks after guess ${i + 1}</i></div>`).join("")}</div>`;
     }
 
     function drawHistory() {
       history.innerHTML = st.guesses.map((g, i) =>
-        `<li class="${st.marks[i]}">${st.marks[i] === "skip" ? "Skipped" : esc(g)}</li>`).join("");
+        `<li class="${st.marks[i]}">${square(st.marks[i])} ${st.marks[i] === "skip" ? "Skipped" : esc(g)}${st.marks[i] === "close" ? ' <small>right franchise</small>' : ""}</li>`).join("");
     }
 
     function shareText() {
@@ -234,7 +280,6 @@
       controls.innerHTML = `
         <div class="guess-row">
           <input id="guess" autocomplete="off" placeholder="Type a ${CATS[cat].label.toLowerCase().slice(0, -1)} title…" aria-label="Your guess">
-          <button class="btn" id="skipBtn">Skip</button>
           <button class="btn primary" id="goBtn">Guess</button>
           <ul class="suggest" id="suggest" hidden></ul>
         </div>`;
@@ -267,14 +312,13 @@
       });
       input.addEventListener("blur", () => setTimeout(() => sug.hidden = true, 100));
       controls.querySelector("#goBtn").onclick = submit;
-      controls.querySelector("#skipBtn").onclick = () => advance("skip", "");
       if (matchMedia("(pointer:fine)").matches) input.focus();
 
       function submit() {
         const g = input.value.trim();
         if (!g) return;
         if (st.guesses.some((x) => norm(x) === norm(g))) { toast("Already guessed"); return; }
-        advance(isCorrect(g, puzzle) ? "win" : "miss", g);
+        advance(isCorrect(g, puzzle) ? "win" : isFranchise(cat, g, puzzle) ? "close" : "miss", g);
       }
     }
 
@@ -284,6 +328,7 @@
       if (mark === "win") { st.done = true; st.won = true; }
       else if (st.marks.length >= MAX_TRIES) st.done = true;
       else if (mark === "miss") toast("Not quite");
+      else if (mark === "close") toast("Right franchise, wrong title!");
       store.set(stateKey(cat, day), st);
       if (st.done) recordResult(cat, day, st.won, st.marks.length);
       paint(st.done ? viewing : st.marks.length);
@@ -293,10 +338,13 @@
       showFrame(frameIdx);
       drawControls();
       drawHistory();
+      drawHints();
       drawResult();
     }
     paint(viewing);
   }
+
+  const firstDay = () => Math.max(1, todayNum - ARCHIVE_DAYS + 1);
 
   function nextUnplayedLink(cat, day) {
     const other = Object.keys(CATS).find((c) => c !== cat && !loadState(c, todayNum).done);
@@ -399,6 +447,11 @@
       return;
     }
     document.getElementById("statsBtn").onclick = renderStats;
+    document.getElementById("helpBtn").onclick = () => document.getElementById("helpDlg").showModal();
+    if (!store.get("sf:seenHelp", false)) {
+      store.set("sf:seenHelp", true);
+      document.getElementById("helpDlg").showModal();
+    }
     window.addEventListener("hashchange", render);
     // Re-check the date when the tab wakes up (sleeping laptops, phones).
     document.addEventListener("visibilitychange", () => { if (!document.hidden) tick(); });

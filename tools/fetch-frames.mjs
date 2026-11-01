@@ -76,17 +76,33 @@ const cleanBackdrops = (imgs) => imgs.backdrops
   .sort((a, b) => a.vote_count - b.vote_count || a.vote_average - b.vote_average)
   .map((b) => IMG + b.file_path);
 
+// Hints are revealed one per miss, hardest first. Empty values are dropped.
+const hintRows = (rows) => rows.filter(([, v]) => v !== undefined && v !== null && String(v).trim() !== "").slice(0, 5);
+const names = (list, n) => (list || []).slice(0, n).map((x) => x.name || x.description || x).filter(Boolean).join(", ");
+
 async function movieFrames(p) {
   const id = await tmdbFind("movie", p);
-  const imgs = await tmdb(`/movie/${id}/images`);
+  const [imgs, info] = await Promise.all([
+    tmdb(`/movie/${id}/images`),
+    tmdb(`/movie/${id}`, { append_to_response: "credits" }),
+  ]);
   let urls = cleanBackdrops(imgs);
   if (urls.length < 6) urls = urls.concat(imgs.backdrops.map((b) => IMG + b.file_path));
-  return { id, frames: pickSix(urls) };
+  const cast = info.credits?.cast || [];
+  const directors = (info.credits?.crew || []).filter((c) => c.job === "Director");
+  const hints = hintRows([
+    ["Genre", names(info.genres, 2)],
+    ["Released", p.year || (info.release_date || "").slice(0, 4)],
+    ["Director", names(directors, 2)],
+    ["Also starring", names(cast.slice(1), 2)],
+    ["Lead actor", cast[0]?.name],
+  ]);
+  return { id, frames: pickSix(urls), hints, series: info.belongs_to_collection?.name };
 }
 
 async function showFrames(p) {
   const id = await tmdbFind("tv", p);
-  const show = await tmdb(`/tv/${id}`);
+  const show = await tmdb(`/tv/${id}`, { append_to_response: "aggregate_credits" });
   // Early frames: episode stills from across the run (harder). Late frames: show backdrops (easier).
   const seasons = show.seasons.filter((s) => s.season_number > 0 && s.episode_count > 0);
   const stills = [];
@@ -101,7 +117,15 @@ async function showFrames(p) {
   const late = backdrops.slice(-Math.max(2, 6 - early.length));
   let frames = [...new Set([...early, ...late])];
   if (frames.length < 6) frames = pickSix([...stills, ...backdrops]);
-  return { id, frames: frames.slice(0, 6) };
+  const cast = [...(show.aggregate_credits?.cast || [])].sort((a, b) => (b.total_episode_count || 0) - (a.total_episode_count || 0));
+  const hints = hintRows([
+    ["Genre", names(show.genres, 2)],
+    ["First aired", p.year || (show.first_air_date || "").slice(0, 4)],
+    ["Network", names(show.networks, 1)],
+    ["Created by", names(show.created_by, 2)],
+    ["Starring", names(cast, 2)],
+  ]);
+  return { id, frames: frames.slice(0, 6), hints };
 }
 
 /* ---------------- Steam (games, no key needed) ---------------- */
@@ -133,7 +157,14 @@ async function gameFrames(p) {
   for (const extra of [data.background_raw, data.background]) {
     if (frames.length < 6 && extra && !frames.includes(extra)) frames.push(extra);
   }
-  return { id: `${data.steam_appid} ${data.name}`, frames };
+  const hints = hintRows([
+    ["Genre", names((data.genres || []).filter((g) => !/free to play|early access|indie/i.test(g.description)), 2)],
+    ["Released", p.year || (data.release_date?.date || "").slice(-4)],
+    ["Metacritic", data.metacritic?.score],
+    ["Publisher", names(data.publishers, 1)],
+    ["Developer", names(data.developers, 1)],
+  ]);
+  return { id: `${data.steam_appid} ${data.name}`, frames, hints };
 }
 
 /* ---------------- Run ---------------- */
@@ -148,9 +179,9 @@ for (const [cat, fn, haveKey, keyName] of jobs) {
   for (const p of data[cat].puzzles) {
     if (p.frames) continue;
     try {
-      const { id, frames } = await fn(p);
+      const { id, frames, hints, series } = await fn(p);
       if (frames.length < 6) problems.push(`${cat}: ${p.answer} only has ${frames.length} images`);
-      out[cat][p.id || slug(p.answer)] = frames;
+      out[cat][p.id || slug(p.answer)] = { frames, hints, ...(series ? { series } : {}) };
       console.log(`✓ ${cat.padEnd(6)} ${p.answer} → ${id} (${frames.length})`);
     } catch (e) {
       problems.push(`${cat}: ${p.answer} – ${e.message}`);

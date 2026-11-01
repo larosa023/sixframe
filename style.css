@@ -166,3 +166,34 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
   .guess-row .btn { flex: 1; }
 }
 #frameBox { position: absolute; inset: 0; overflow: hidden; }
+
+/* --- guessthe.game-style touches --- */
+.frames { grid-template-columns: repeat(6, 1fr) auto; }
+.frames .skip-btn {
+  padding: 0 14px; background: var(--cat); color: #111; border-color: var(--cat); white-space: nowrap;
+}
+.frames button.close { background: #e5b62e; border-color: #e5b62e; color: #2a2000; }
+.remaining { text-align: center; color: var(--muted); font-size: 14px; margin: -4px 0 10px; min-height: 1em; }
+.history li.close { border-color: #e5b62e; }
+.history small { color: #e5b62e; margin-left: 6px; }
+
+.hints { margin: 14px 0; padding: 12px 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+.hints h3 { margin: 0 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.hint { display: flex; gap: 12px; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.hint:first-of-type { border-top: 0; }
+.hint span { width: 110px; flex: none; color: var(--muted); }
+.hint b { color: var(--cat); font-weight: 700; }
+.hint.locked i { color: var(--muted); opacity: .6; font-style: normal; }
+
+.day-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
+
+#helpDlg h2 { margin-top: 0; font-family: "Archivo Black", sans-serif; }
+#helpDlg ul { padding-left: 18px; line-height: 1.6; }
+#helpDlg .legend { font-weight: 700; }
+#helpDlg .muted { color: var(--muted); font-size: 14px; }
+
+@media (max-width: 560px) {
+  .frames { grid-template-columns: repeat(6, 1fr); }
+  .frames .skip-btn { grid-column: 1 / -1; height: 40px; }
+  .hint span { width: 90px; }
+}
