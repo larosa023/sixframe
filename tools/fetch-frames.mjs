@@ -14,7 +14,10 @@ import { readFile, writeFile } from "node:fs/promises";
 
 const root = new URL("..", import.meta.url);
 const data = JSON.parse(await readFile(new URL("data/puzzles.json", root), "utf8"));
-const { TMDB_TOKEN, TMDB_KEY } = process.env;
+// Accept TMDB, TMDB_KEY or TMDB_TOKEN; either the short API key or the long read token works.
+const tmdbSecret = (process.env.TMDB_TOKEN || process.env.TMDB_KEY || process.env.TMDB || "").trim();
+const TMDB_TOKEN = tmdbSecret.startsWith("eyJ") ? tmdbSecret : "";
+const TMDB_KEY = TMDB_TOKEN ? "" : tmdbSecret;
 const IMG = "https://image.tmdb.org/t/p/w1280";
 const out = { movies: {}, shows: {}, games: {} };
 const problems = [];
@@ -124,8 +127,8 @@ async function gameFrames(p) {
 
 /* ---------------- Run ---------------- */
 const jobs = [
-  ["movies", movieFrames, TMDB_TOKEN || TMDB_KEY, "TMDB_TOKEN"],
-  ["shows", showFrames, TMDB_TOKEN || TMDB_KEY, "TMDB_TOKEN"],
+  ["movies", movieFrames, TMDB_TOKEN || TMDB_KEY, "TMDB"],
+  ["shows", showFrames, TMDB_TOKEN || TMDB_KEY, "TMDB"],
   ["games", gameFrames, true, ""],
 ];
 
