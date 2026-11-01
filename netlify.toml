@@ -1,0 +1,12 @@
+[build]
+  publish = "."
+  command = "node tools/fetch-frames.mjs"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Rebuild daily is not needed: the day rolls over in each visitor's browser.
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300"

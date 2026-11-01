@@ -67,11 +67,16 @@
     const rotating = list.filter((p) => !p.date);
     return rotating[(day - 1) % rotating.length];
   }
+  let FETCHED = {};
   function framesFor(cat, puzzle) {
     if (puzzle.frames) return puzzle.frames;
-    const base = `frames/${cat}/${puzzle.id || slug(puzzle.answer)}`;
+    const id = puzzle.id || slug(puzzle.answer);
+    const base = `frames/${cat}/${id}`;
     const ext = puzzle.ext || DATA.ext || "jpg";
-    return Array.from({ length: MAX_TRIES }, (_, i) => `${base}/${i + 1}.${ext}`);
+    const local = Array.from({ length: MAX_TRIES }, (_, i) => `${base}/${i + 1}.${ext}`);
+    const remote = (FETCHED[cat] || {})[id] || [];
+    // Build-time frames (TMDB/RAWG) first; any gaps fall back to local files.
+    return local.map((path, i) => remote[i] || path);
   }
 
   /* ---------- Guess matching ---------- */
@@ -368,6 +373,10 @@
     try {
       const res = await fetch("data/puzzles.json", { cache: "no-cache" });
       DATA = await res.json();
+      try {
+        const fr = await fetch("data/frames.json", { cache: "no-cache" });
+        if (fr.ok) FETCHED = await fr.json();
+      } catch { /* no build-time frames yet */ }
     } catch (e) {
       app.innerHTML = `<p>Couldn't load puzzles. If you opened index.html directly, serve the folder over HTTP (e.g. GitHub Pages or <code>python -m http.server</code>).</p>`;
       return;
