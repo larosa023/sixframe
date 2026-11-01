@@ -1,5 +1,7 @@
 # Sixframe
 
+**▶ Play: [sixframe.netlify.app](https://sixframe.netlify.app/)**
+
 Daily guessing game: name the **movie**, **TV show**, or **video game** from up to six frames. Each wrong guess or skip reveals the next frame. New puzzles drop every night at **12:00 AM Eastern**, and the last **100 days** stay playable in the archive.
 
 Pure static site (HTML/CSS/JS) — no build step, no server, works on GitHub Pages.
