@@ -56,6 +56,12 @@ function tmdb(path, params = {}) {
 
 async function tmdbFind(kind, p) {
   if (p.tmdb) return p.tmdb;
+  if (p.imdb) {
+    // Exact match by IMDb id (no guessing between remakes or same-name titles).
+    const f = await tmdb(`/find/${p.imdb}`, { external_source: "imdb_id" });
+    const hit = (kind === "movie" ? f.movie_results : f.tv_results)[0];
+    if (hit) return hit.id;
+  }
   const yearParam = kind === "movie" ? "primary_release_year" : "first_air_date_year";
   let r = await tmdb(`/search/${kind}`, { query: p.answer, ...(p.year ? { [yearParam]: p.year } : {}) });
   if (!r.results.length && p.year) r = await tmdb(`/search/${kind}`, { query: p.answer });
@@ -123,6 +129,10 @@ async function gameFrames(p) {
   // Developers list their most iconic screenshot first, so reverse for hardest → easiest.
   const shots = (data.screenshots || []).map((s) => s.path_full);
   const frames = pickSix(shots).reverse();
+  // Some store pages only have 5 screenshots; top up with the store backdrop art.
+  for (const extra of [data.background_raw, data.background]) {
+    if (frames.length < 6 && extra && !frames.includes(extra)) frames.push(extra);
+  }
   return { id: `${data.steam_appid} ${data.name}`, frames };
 }
 

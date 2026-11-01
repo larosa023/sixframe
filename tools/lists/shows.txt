@@ -1,0 +1,105 @@
+# Source: listchallenges.com "Top 1000 Television Series (IMDb)", in rank order.
+# Skipped: talk/news/reality/documentary, web series, duplicate seasons or reboots of the same show,
+# and a few regional titles with no wide release.
+# answer|year|aliases (;-separated)
+Game of Thrones|2011|GOT
+Breaking Bad|2008
+The Wire|2002
+One-Punch Man|2015|One Punch Man
+Sherlock|2010
+Rick and Morty|2013
+The Sopranos|1999|Sopranos
+Avatar: The Last Airbender|2005|ATLA;Avatar
+True Detective|2014
+Firefly|2002
+Fullmetal Alchemist: Brotherhood|2009|Fullmetal Alchemist;FMAB
+Friends|1994
+House of Cards|2013
+Arrested Development|2003
+Fargo|2014
+Death Note|2006
+Narcos|2015
+Batman: The Animated Series|1992|Batman TAS
+Cowboy Bebop|1998
+The Twilight Zone|1959|Twilight Zone
+Ash vs Evil Dead|2015|Ash vs. Evil Dead
+Hunter x Hunter|2011
+Dexter|2006
+The Simpsons|1989|Simpsons
+Seinfeld|1989
+Rome|2005
+Mr. Robot|2015|Mr Robot
+Twin Peaks|1990
+Freaks and Geeks|1999
+Dragon Ball Z|1989|DBZ
+Oz|1997
+Monty Python's Flying Circus|1969|Monty Python
+Only Fools and Horses|1981
+Gravity Falls|2012
+Code Geass: Lelouch of the Rebellion|2006|Code Geass
+House|2004|House MD;House M.D.
+South Park|1997
+The Office|2005|The Office US
+Daredevil|2015
+Doctor Who|2005
+It's Always Sunny in Philadelphia|2005|Always Sunny
+Battlestar Galactica|2004|BSG
+Better Call Saul|2015
+Six Feet Under|2001
+Archer|2009
+Deadwood|2004
+Fawlty Towers|1975
+Attack on Titan|2013|Shingeki no Kyojin
+The Shield|2002
+Black Mirror|2011
+The West Wing|1999|West Wing
+Peaky Blinders|2013
+Chappelle's Show|2003|Chappelles Show
+Blackadder|1983|Black Adder
+Steins;Gate|2011|Steins Gate
+The Adventures of Sherlock Holmes|1984
+The Thick of It|2005
+Brass Eye|1997
+Suits|2011
+Sons of Anarchy|2008
+Mad Men|2007
+The X-Files|1993|X-Files
+Downton Abbey|2010
+Shameless|2011
+Curb Your Enthusiasm|2000|Curb
+The Legend of Korra|2012|Korra
+Justified|2010
+Star Trek: The Next Generation|1987|TNG;Star Trek TNG
+Louie|2010
+Adventure Time|2010
+Friday Night Lights|2006
+Flight of the Conchords|2007
+Spaced|1999
+Dragon Ball|1986
+Father Ted|1995
+Mystery Science Theater 3000|1988|MST3K
+Berserk|1997
+Lucifer|2016
+The Prisoner|1967
+Homicide: Life on the Street|1993|Homicide
+Alfred Hitchcock Presents|1955
+Gomorrah|2014|Gomorra
+Yes Minister|1980
+The Walking Dead|2010|TWD
+Supernatural|2005
+Modern Family|2009
+Spartacus|2010
+Vikings|2013
+Hannibal|2013
+Futurama|1999
+Community|2009
+Entourage|2004
+Boardwalk Empire|2010
+Parks and Recreation|2009|Parks and Rec
+The IT Crowd|2006|IT Crowd
+The Newsroom|2012
+Luther|2010
+Mr. Bean|1990|Mr Bean
+Black Books|2000
+Coupling|2000
+Carnivàle|2003|Carnivale

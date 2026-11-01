@@ -9,7 +9,7 @@
   // Zoom per frame (1 = full image). Set all to 1 to turn the zoom off.
   const ZOOM = [2.6, 1.8, 1.3, 1, 1, 1];
   const hash = (s) => { let h = 2166136261; for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return h >>> 0; };
-  const ARCHIVE_DAYS = 100;
+  const ARCHIVE_DAYS = 101;
   const CATS = {
     movies: { label: "Movies", emoji: "🎬" },
     shows:  { label: "Shows",  emoji: "📺" },

@@ -1,0 +1,103 @@
+# Source: IMDb "The 1000 Greatest Films of All Time" (ls006266261), ranks 1-101
+# answer|year|imdb id|aliases (;-separated)
+The Godfather|1972|tt0068646
+Goodfellas|1990|tt0099685|GoodFellas
+Pulp Fiction|1994|tt0110912
+The Usual Suspects|1995|tt0114814
+Apocalypse Now|1979|tt0078788
+Trainspotting|1996|tt0117951
+Fight Club|1999|tt0137523
+Schindler's List|1993|tt0108052
+Boogie Nights|1997|tt0118749
+Reservoir Dogs|1992|tt0105236
+The Shawshank Redemption|1994|tt0111161|Shawshank
+Jaws|1975|tt0073195
+Taxi Driver|1976|tt0075314
+L.A. Confidential|1997|tt0119488|LA Confidential
+Back to the Future|1985|tt0088763|BTTF
+The Godfather Part II|1974|tt0071562|The Godfather: Part II;Godfather 2
+Fargo|1996|tt0116282
+The Dark Knight|2008|tt0468569
+The Matrix|1999|tt0133093
+Magnolia|1999|tt0175880
+Scarface|1983|tt0086250
+The Royal Tenenbaums|2001|tt0265666
+Donnie Darko|2001|tt0246578
+Platoon|1986|tt0091763
+Heat|1995|tt0113277
+American Beauty|1999|tt0169547
+The Big Lebowski|1998|tt0118715
+Raging Bull|1980|tt0081398
+A Prophet|2009|tt1235166|Un prophète
+The Departed|2006|tt0407887
+There's Something About Mary|1998|tt0129387
+Léon: The Professional|1994|tt0110413|Leon;The Professional
+City of God|2002|tt0317248|Cidade de Deus
+Once Upon a Time in America|1984|tt0087843
+Lock, Stock and Two Smoking Barrels|1998|tt0120735|Lock Stock
+The Truman Show|1998|tt0120382
+Toy Story|1995|tt0114709
+Alien|1979|tt0078748
+Rushmore|1998|tt0128445
+Se7en|1995|tt0114369|Seven
+Good Will Hunting|1997|tt0119217
+Aliens|1986|tt0090605
+The Exorcist|1973|tt0070047
+One Flew Over the Cuckoo's Nest|1975|tt0073486
+Chinatown|1974|tt0071315
+Casino|1995|tt0112641
+True Romance|1993|tt0108399
+Gladiator|2000|tt0172495
+Raiders of the Lost Ark|1981|tt0082971|Indiana Jones
+Miller's Crossing|1990|tt0100150
+Being John Malkovich|1999|tt0120601
+Die Hard|1988|tt0095016
+Casablanca|1942|tt0034583
+Kick-Ass|2010|tt1250777
+The Prestige|2006|tt0482571
+Inglourious Basterds|2009|tt0361748|Inglorious Basterds
+Evil Dead II|1987|tt0092991|Evil Dead 2
+Jurassic Park|1993|tt0107290
+Batman Begins|2005|tt0372784
+The Green Mile|1999|tt0120689
+The French Connection|1971|tt0067116
+Unforgiven|1992|tt0105695
+Drive|2011|tt0780504
+The Shining|1980|tt0081505
+The Evil Dead|1981|tt0083907
+Forrest Gump|1994|tt0109830
+The Thing|1982|tt0084787
+Citizen Kane|1941|tt0033467
+Blue Velvet|1986|tt0090756
+The Wicker Man|1973|tt0070917
+Eternal Sunshine of the Spotless Mind|2004|tt0338013|Eternal Sunshine
+The Princess Bride|1987|tt0093779
+A Clockwork Orange|1971|tt0066921
+Go|1999|tt0139239
+Stand by Me|1986|tt0092005
+The Lord of the Rings: The Return of the King|2003|tt0167260|Return of the King
+Terminator 2: Judgment Day|1991|tt0103064|Terminator 2;T2
+Toy Story 2|1999|tt0120363
+Saving Private Ryan|1998|tt0120815
+Indiana Jones and the Last Crusade|1989|tt0097576|Last Crusade
+Sin City|2005|tt0401792
+Saw|2004|tt0387564
+My Left Foot|1989|tt0097937
+Bowling for Columbine|2002|tt0310793
+Man on Fire|2004|tt0328107
+Almost Famous|2000|tt0181875
+High Fidelity|2000|tt0146882
+Django Unchained|2012|tt1853728|Django
+12 Angry Men|1957|tt0050083|Twelve Angry Men
+Memento|2000|tt0209144
+Rain Man|1988|tt0095953
+Minority Report|2002|tt0181689
+Goldfinger|1964|tt0058150
+The Social Network|2010|tt1285016
+American Psycho|2000|tt0144084
+Men in Black|1997|tt0119654|MIB
+No Country for Old Men|2007|tt0477348
+Airplane!|1980|tt0080339|Airplane
+There Will Be Blood|2007|tt0469494
+Inception|2010|tt1375666
+JFK|1991|tt0102138

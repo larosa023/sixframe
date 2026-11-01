@@ -1,0 +1,104 @@
+# Source: playthatgame.co.uk main list (via listchallenges.com copy), in rank order,
+# keeping only games sold on Steam (frames come from Steam). App IDs verified against the store.
+# answer|year|aliases (;-separated)|steam app id|optional unique id
+Half-Life 2|2004|HL2|220
+Resident Evil 4|2005|RE4|254700
+BioShock|2007||409710
+Final Fantasy VII|1997|FF7;FFVII|39140
+Metal Gear Solid|1998|MGS|2131630
+Doom|1993|Doom 1993|2280|doom-1993
+The Elder Scrolls V: Skyrim|2011|Skyrim|489830
+Mass Effect 2|2010|ME2|24980
+The Last of Us|2013|The Last of Us Part I;TLOU|1888930
+Red Dead Redemption|2010|RDR|2668510
+Halo: Combat Evolved|2001|Halo;Halo CE|976730
+Portal 2|2011||620
+Portal|2007||400
+The Witcher 3: Wild Hunt|2015|Witcher 3|292030
+Deus Ex|2000||6910
+Grand Theft Auto V|2013|GTA 5;GTA V|271590
+Half-Life|1998||70
+Call of Duty 4: Modern Warfare|2007|CoD4;Call of Duty 4|7940
+Dark Souls|2011||570940
+Star Wars: Knights of the Old Republic|2003|KOTOR|32370
+Final Fantasy VI|1994|FF6;FFVI|1173820
+Fallout 3|2008||22370
+Metal Gear Solid 3: Snake Eater|2004|MGS3;Snake Eater|2131650
+Resident Evil|1996|RE1|304240
+Silent Hill 2|2001||2124490
+Journey|2012||638230
+Overwatch|2016||2357570
+Baldur's Gate II: Shadows of Amn|2000|Baldur's Gate 2|257350
+Team Fortress 2|2007|TF2|440
+Okami|2006|Ōkami|587620
+Batman: Arkham Asylum|2009|Arkham Asylum|35140
+The Secret of Monkey Island|1990|Monkey Island|32360
+Mass Effect|2007||17460
+The Walking Dead|2012|The Walking Dead Telltale|207610
+Batman: Arkham City|2011|Arkham City|200260
+Prince of Persia: The Sands of Time|2003|Sands of Time|13600
+Grim Fandango|1998||316790
+The Elder Scrolls IV: Oblivion|2006|Oblivion|22330
+Counter-Strike|2000|CS|10
+Braid|2008||26800
+Final Fantasy X|2001|FFX;FF10|359870
+System Shock 2|1999||238210
+Grand Theft Auto IV|2008|GTA 4;GTA IV|12210
+Assassin's Creed II|2009|Assassin's Creed 2|33230
+Metal Gear Solid V: The Phantom Pain|2015|MGSV;Phantom Pain|287700
+Persona 4|2008|Persona 4 Golden;P4G|1113000
+Quake|1996||2310
+Doom|2016|Doom 2016|379720|doom-2016
+God of War|2018|GoW|1593500
+Planescape: Torment|1999||466300
+Horizon Zero Dawn|2017||1151640
+Metal Gear Solid 2: Sons of Liberty|2001|MGS2|2131640
+Civilization IV|2005|Civ 4;Sid Meier's Civilization IV|3900
+The Elder Scrolls III: Morrowind|2002|Morrowind|22320
+Uncharted 4: A Thief's End|2016|Uncharted 4|1659420
+Dead Space|2008||17470
+Red Dead Redemption 2|2018|RDR2|1174180
+Stardew Valley|2016||413150
+NieR:Automata|2017|Nier Automata|524220
+Titanfall 2|2016||1237970
+X-COM: UFO Defense|1994|UFO: Enemy Unknown|7760
+Beyond Good & Evil|2003|Beyond Good and Evil|15130
+BioShock Infinite|2013||8870
+Limbo|2010||48000
+Inside|2016||304430
+Fallout: New Vegas|2010|New Vegas|22380
+Shenmue|1999||758330
+Wolfenstein 3D|1992||2270
+Spelunky|2008||239350
+Psychonauts|2005||3830
+Myst|1993||1255560
+Left 4 Dead|2008|L4D|500
+Dragon Age: Origins|2009|Dragon Age|47810
+Civilization V|2010|Civ 5;Sid Meier's Civilization V|8930
+Super Meat Boy|2010||40800
+Age of Empires II|1999|AoE2;Age of Empires 2|813780
+Day of the Tentacle|1993||388210
+Star Wars: TIE Fighter|1994|TIE Fighter|355250
+Resident Evil 7: Biohazard|2017|RE7;Resident Evil 7|418370
+Final Fantasy IX|2000|FF9;FFIX|377840
+Persona 5|2016|Persona 5 Royal;P5R|1687950
+Far Cry 3|2012||220240
+Alien: Isolation|2014||214490
+Dishonored|2012||205100
+Celeste|2018||504230
+Fallout|1997|Fallout 1|38400
+Duke Nukem 3D|1996||434050
+Katamari Damacy|2004||848350
+XCOM: Enemy Unknown|2012|XCOM|200510
+Street Fighter IV|2008|SF4;Ultra Street Fighter IV|45760
+Final Fantasy IV|1991|FF4;FFIV|1173800
+Bayonetta|2009||460790
+Undertale|2015||391540
+Quake III Arena|1999|Quake 3|2200
+Final Fantasy XII|2006|FF12;FFXII|595520
+Left 4 Dead 2|2009|L4D2|550
+Marvel's Spider-Man|2018|Spider-Man|1817070
+Shovel Knight|2014||250760
+Kingdom Hearts|2002|KH|2552430
+Fallout 4|2015||377160
+EVE Online|2003|EVE|8500

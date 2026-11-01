@@ -24,7 +24,8 @@ Run locally: `python -m http.server` in this folder, then open http://localhost:
 - `data/puzzles.json` → `start` is puzzle **#1**. Every day after adds one.
 - Day boundaries are computed in `America/New_York`, DST included, in every visitor's browser. The page counts down to midnight ET and swaps to the new puzzles live, no refresh needed.
 - Puzzles rotate in list order. To lock a puzzle to a specific day, add `"date": "2026-12-25"` to it.
-- 100 puzzles per category, starting 2026-07-25, so the archive is full from launch. Day 101 loops back to puzzle 1, exactly when it drops out of the archive. Add puzzles to the end of a list to lengthen the cycle.
+- 101 puzzles per category, starting 2026-07-24 (#1) through 2026-11-01 (#101), so the whole archive is playable from launch. After that the list loops, and each puzzle comes back only after it has dropped out of the archive.
+- Titles live in `tools/lists/` (movies from IMDb's "1000 Greatest Films", shows from listchallenges' "Top 1000 TV Series", games from playthatgame.co.uk filtered to Steam). Edit a list, then run `python3 tools/build-puzzles.py` to regenerate `data/puzzles.json`.
 - Difficulty: frames run from obscure to iconic, and frames 1–3 are zoomed into a detail (2.6×, 1.8×, 1.3×). Change `ZOOM` at the top of `app.js` to adjust.
 
 ## Automatic frames (Netlify)
