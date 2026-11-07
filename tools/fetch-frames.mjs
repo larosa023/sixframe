@@ -131,7 +131,7 @@ if (!haveTmdb) console.log("⚠ TMDB not set — movie/show frames still work, b
 for (const p of data.movies.puzzles) {
   const picked = stills.movies[p.imdb];
   if (!picked) { problems.push(`movies: ${p.answer} has no hand-picked frames`); continue; }
-  const entry = { frames: picked.map((f) => IMG + f) };
+  const entry = { frames: picked.map((f) => IMG + f), link: `https://www.imdb.com/title/${p.imdb}/` };
   if (haveTmdb) {
     try { Object.assign(entry, await movieHints(p)); }
     catch (e) { problems.push(`movies: ${p.answer} hints – ${e.message}`); }
@@ -143,7 +143,7 @@ for (const p of data.movies.puzzles) {
 for (const p of data.shows.puzzles) {
   const picked = stills.shows[idOf(p)];
   if (!picked) { problems.push(`shows: ${p.answer} has no hand-picked frames`); continue; }
-  const entry = { frames: picked.frames.map((f) => IMG + f) };
+  const entry = { frames: picked.frames.map((f) => IMG + f), link: `https://www.themoviedb.org/tv/${picked.tmdb}` };
   if (haveTmdb) {
     try { Object.assign(entry, await showHints(p, picked.tmdb)); }
     catch (e) { problems.push(`shows: ${p.answer} hints – ${e.message}`); }
@@ -156,7 +156,7 @@ for (const p of data.games.puzzles) {
   const picked = stills.games[idOf(p)];
   if (!picked) { problems.push(`games: ${p.answer} has no hand-picked frames`); continue; }
   try {
-    const entry = await gameEntry(p, picked);
+    const entry = { ...(await gameEntry(p, picked)), link: `https://store.steampowered.com/app/${picked.apps[0]}/` };
     out.games[idOf(p)] = entry;
     console.log(`✓ game   ${p.answer} (${entry.frames.length}/6)`);
   } catch (e) {

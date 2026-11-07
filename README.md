@@ -4,22 +4,19 @@
 
 Daily guessing game: name the **movie**, **TV show**, or **video game** from up to six frames. Each wrong guess or skip reveals the next frame. New puzzles drop every night at **12:00 AM Eastern**, and the last **101 days** stay playable in the archive.
 
-Pure static site (HTML/CSS/JS) — no build step, no server, works on GitHub Pages.
+Static site (HTML/CSS/JS) hosted on Netlify. Each deploy runs `node tools/fetch-frames.mjs` to build `data/frames.json` (see below).
 
-## Publish on GitHub Pages
+## Features
 
-1. Create a repo named `sixframe` and push this folder to it.
-2. Repo **Settings → Pages → Source: Deploy from a branch**, branch `main`, folder `/ (root)`.
-3. Your site will be at `https://<your-username>.github.io/sixframe/`.
+- Search that tolerates typos ("shawshenk"), accepts aliases ("bttf"), and labels titles that share a name by year. A title that isn't on the list doesn't use up a try.
+- A frame viewer with arrow keys, 1–6 to jump, swipe on phones, and a full-screen lightbox.
+- Result card that shows the answer, a link to IMDb, TMDB or Steam, a countdown to the next puzzle, Share, "Share all 3" and a jump to the next category.
+- Streaks, best streak, average guesses and a guess distribution for each category.
+- An archive with progress bars, category filters, an "Unfinished only" toggle and Random unplayed.
+- Settings: hard mode (no hints), colorblind squares, a backup code to move progress between devices, and a reset.
+- Installs to a phone's home screen (PWA manifest and icons) and shows a link preview image when shared.
 
-```bash
-git init && git add . && git commit -m "Sixframe"
-git branch -M main
-git remote add origin https://github.com/<your-username>/sixframe.git
-git push -u origin main
-```
-
-Run locally: `python -m http.server` in this folder, then open http://localhost:8000.
+Run locally: `node tools/fetch-frames.mjs && python -m http.server`, then open http://localhost:8000.
 
 ## How the daily rotation works
 
